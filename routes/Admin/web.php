@@ -29,9 +29,15 @@ Route::group(['prefix' => 'admin'], function(){
         Route::delete('{id}', ['as' => 'maquinas.delete', 'uses' => 'MaquinasController@destroy']);
     });
 
-    //LABORATÓRIOS
-    Route::group(['prefix' => 'laboratorios'], function() {
-
+    //SALAS
+    Route::group(['prefix' => 'salas'], function() {
+        Route::get('/', ['as' => 'salas', 'uses' => 'SalasController@index']);
+        Route::get('add', ['as' => 'salas.add', 'uses' => 'SalasController@store']);
+        Route::post('add', ['as' => 'salas.create', 'uses' => 'SalasController@create']);
+        Route::get('{id}/info', ['as' => 'salas.show', 'uses' => 'SalasController@show']);
+        Route::get('{id}/edit', ['as' => 'salas.edit', 'uses' => 'SalasController@edit']);
+        Route::post('{id}/edit', ['as' => 'salas.update', 'uses' => 'SalasController@update']);
+        Route::delete('{id}', ['as' => 'salas.delete', 'uses' => 'SalasController@destroy']);
     });
 
     //MANUTENÇÃO

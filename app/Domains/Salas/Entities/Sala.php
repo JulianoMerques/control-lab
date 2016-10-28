@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Domains\Laboratorio\Entities;
+namespace App\Domains\Salas\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Laboratorio extends Model
+class Sala extends Model
 {
 
     protected $table = 'laboratorios';

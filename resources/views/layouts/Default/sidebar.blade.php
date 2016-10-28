@@ -33,11 +33,11 @@
             <li><a href="{{route('maquinas')}}">Listar</a></li>
             <li><a href="{{route('maquinas.add')}}">Cadastrar</a></li>
         </ul>
-        <!-- Dropdown Structure Laboratório -->
+        <!-- Dropdown Structure Salas -->
 
         <ul id="dropdownLab" class="dropdown-content">
-            <li><a href="#!">Listar</a></li>
-            <li><a href="#!">Cadastrar</a></li>
+            <li><a href="{{route('salas')}}">Listar</a></li>
+            <li><a href="{{route('salas.add')}}">Cadastrar</a></li>
         </ul>
         <!-- Dropdown Structure Manutenção -->
         <ul id="dropdownMan" class="dropdown-content">

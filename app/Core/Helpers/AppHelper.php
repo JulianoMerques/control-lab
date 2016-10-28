@@ -11,17 +11,17 @@ class AppHelper {
         $messageText = $message[1];
 
         switch($typeMessage){
-            case 'error': $typeMessage = 'danger'; $icon = '<i class="fa fa-times"></i>';
+            case 'error': $typeMessage = '#ef5350 red lighten-1'; $icon = '<i class="material-icons">error</i>';
                 break;
-            case 'success': $typeMessage = 'success'; $icon = '<i class="fa fa-check"></i>';
+            case 'success': $typeMessage = '#a5d6a7 green lighten-3'; $icon = '<i class="material-icons">done</i>';
                 break;
-            case 'warning': $typeMessage = 'warning'; $icon = '<i class="fa fa-warning"></i>';
+            case 'warning': $typeMessage = '#ef5350 red lighten-1'; $icon = '<i class="material-icons">warning</i>';
                 break;
-            default: $typeMessage = 'info'; $icon = '<i class="fa fa-info-circle"></i>';
+            default: $typeMessage = '#a5d6a7 green lighten-3'; $icon = '<i class="material-icons">info</i>';
                 break;
         }
 
-        echo '<div id="alertMessage" class="alert alert-' . $typeMessage . '">' . $icon . ' ' . $messageText . '</div>';
+        echo '<div id="alertMessage" class="black-text ' . $typeMessage . '">' . $icon . '  ' . $messageText . '</div>';
     }
 
     static function showAlert($message){
@@ -30,18 +30,17 @@ class AppHelper {
         $messageText = $message[1];
 
         switch($typeMessage){
-            case 'error': $typeMessage = 'danger'; $icon = '<i class=&quot;fa fa-times&quot;></i>';
+            case 'error': $typeMessage = '#ef5350 red lighten-1'; $icon = '<i class="material-icons">error</i>';
                 break;
-            case 'success': $typeMessage = 'success'; $icon = '<i class=&quot;fa fa-check&quot;></i>';
+            case 'success': $typeMessage = '#a5d6a7 green lighten-3'; $icon = '<i class="material-icons">done</i>';
                 break;
-            case 'warning': $typeMessage = 'warning'; $icon = '<i class=&quot;fa fa-warning&quot;></i>';
+            case 'warning': $typeMessage = '#ef5350 red lighten-1'; $icon = '<i class="material-icons">warning</i>';
                 break;
-            default: $typeMessage = 'info'; $icon = '<i class=&quot;fa fa-info-circle&quot;></i>';
+            default: $typeMessage = '#a5d6a7 green lighten-3'; $icon = '<i class="material-icons">info</i>';
                 break;
         }
 
-        echo '<div data-toggle="notify" data-onload data-message="'.$icon.' '.$messageText.'"
-            data-options="{&quot;status&quot;:&quot;'.$typeMessage.'&quot;, &quot;pos&quot;:&quot;top-right&quot;}" class="hidden-xs"></div>';
+        echo '<div class="toast '.$typeMessage.'"><i class="material-icons">'.$icon.'</i> '.$messageText.'</div>';
     }
 
     static function returnCurrentRoute()

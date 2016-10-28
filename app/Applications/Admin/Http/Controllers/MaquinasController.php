@@ -1,7 +1,7 @@
 <?php
 namespace App\Applications\Admin\Http\Controllers;
 
-use App\Domains\Laboratorio\Repositories\LaboratorioRepository;
+use App\Domains\Salas\Repositories\SalaRepository;
 use App\Domains\Maquina\Services\MaquinaService;
 use App\Domains\Maquina\Repositories\MaquinaRepository;
 use Illuminate\Http\Request;
@@ -12,7 +12,7 @@ class MaquinasController extends BaseController {
 
     private $service;
 
-    private $laboratorioRepository;
+    private $salasRepository;
 
     /**
      * Create a new controller instance.
@@ -20,12 +20,12 @@ class MaquinasController extends BaseController {
      * @return void
      */
     public function __construct( MaquinaRepository $repository, MaquinaService $service,
-                                LaboratorioRepository $laboratorioRepository)
+                                SalaRepository $salasRepository)
     {
         $this->middleware('auth');
         $this->repository = $repository;
         $this->service = $service;
-        $this->laboratorioRepository = $laboratorioRepository;
+        $this->salasRepository = $salasRepository;
     }
 
     /**
@@ -41,7 +41,7 @@ class MaquinasController extends BaseController {
 
     public function store()
     {
-    $laboratorios = $this->laboratorioRepository->all();
+    $laboratorios = $this->salasRepository->all();
         return $this->view('Dispositivos.add', compact('laboratorios'));
     }
     public function create(Request $request){
@@ -55,7 +55,7 @@ class MaquinasController extends BaseController {
 
     public function edit($id){
         $maquina = $this->repository->find($id);
-        $laboratorios = $this->laboratorioRepository->all();
+        $laboratorios = $this->salasRepository->all();
         return $this->view('Dispositivos.edit', compact('maquina','laboratorios'));
     }
 
