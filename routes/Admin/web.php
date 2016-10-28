@@ -11,6 +11,7 @@
 |
 */
 Route::group(['prefix' => 'admin'], function(){
+<<<<<<< HEAD
 //    Route::get('/', function () {
 //        return view('welcome');
 //    });
@@ -50,6 +51,18 @@ Route::group(['prefix' => 'admin'], function(){
 });
 
 
+=======
+    Route::get('/', function () {
+        return view('welcome');
+    });
+
+    Route::get('/home', 'AdminController@index');
+
+    Route::get('/teste', function(){
+        return 'Testando..';
+    });
+});
+>>>>>>> c7ae111ba3cceef0f9a08bac549e4b3df7f78363
 Route::group(['prefix' => 'user'], function(){
     Route::get('/', function () {
         return view('welcome');

@@ -5,6 +5,11 @@
     html, body {
         background-color:#e0e0e0;
         color: #636b6f;
+<<<<<<< HEAD
+=======
+        font-family: 'Raleway', sans-serif;
+        font-weight: 100;
+>>>>>>> c7ae111ba3cceef0f9a08bac549e4b3df7f78363
         height: 100vh;
         margin: 0;
     }

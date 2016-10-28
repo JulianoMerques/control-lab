@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="/css/materialize.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<<<<<<< HEAD
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
     <!-- Scripts -->
@@ -28,6 +29,15 @@
             $('.tooltipped').tooltip({delay: 50});
         });
 
+=======
+
+    <!-- Scripts -->
+    <script>
+        $( document ).ready(function(){
+            $(".button-collapse").sideNav();
+            $(".dropdown-button").dropdown();
+        })
+>>>>>>> c7ae111ba3cceef0f9a08bac549e4b3df7f78363
         window.Laravel = <?php echo json_encode([
                 'csrfToken' => csrf_token(),
         ]); ?>
@@ -47,6 +57,11 @@
     </aside>
     <!-- End aside-->
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> c7ae111ba3cceef0f9a08bac549e4b3df7f78363
     <div class="row">
         <div>
             <!-- START Main section-->
@@ -59,15 +74,24 @@
             </section>
             <!-- END Main section-->
         </div>
+<<<<<<< HEAD
     </div>
     @yield('modal')
+=======
+
+    </div>
+>>>>>>> c7ae111ba3cceef0f9a08bac549e4b3df7f78363
 </section>
 <!-- END Main wrapper-->
 
 <!-- Scripts -->
+<<<<<<< HEAD
 <script src="/js/materialize.js"></script>
 
 @yield('script')
+=======
+<script src="/public/js/materialize.js"></script>
+>>>>>>> c7ae111ba3cceef0f9a08bac549e4b3df7f78363
 
 
 </body>

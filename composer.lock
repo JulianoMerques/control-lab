@@ -4,6 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "hash": "a63c325a4781cf9554ee181a5a5fea2b",
     "content-hash": "ee9531f0b73ad4e48f1077825e5d139f",
     "packages": [
@@ -62,6 +63,12 @@
             "time": "2016-09-15 14:05:56"
         },
         {
+=======
+    "hash": "ed9df8b872992035f068a7fe461a635a",
+    "content-hash": "76036da3b5b55b91dbe1e1affa01bf9e",
+    "packages": [
+        {
+>>>>>>> c7ae111ba3cceef0f9a08bac549e4b3df7f78363
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
             "source": {
@@ -362,6 +369,7 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
             "version": "v5.3.20",
             "source": {
                 "type": "git",
@@ -372,6 +380,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/09f2515b72eba3229dfce44a801852b9b8d011e2",
                 "reference": "09f2515b72eba3229dfce44a801852b9b8d011e2",
+=======
+            "version": "v5.3.19",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "f1a5bb417b3e0d1949fe84617eacd1a14d75d7f1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/f1a5bb417b3e0d1949fe84617eacd1a14d75d7f1",
+                "reference": "f1a5bb417b3e0d1949fe84617eacd1a14d75d7f1",
+>>>>>>> c7ae111ba3cceef0f9a08bac549e4b3df7f78363
                 "shasum": ""
             },
             "require": {
@@ -486,7 +506,11 @@
                 "framework",
                 "laravel"
             ],
+<<<<<<< HEAD
             "time": "2016-10-25 13:38:24"
+=======
+            "time": "2016-10-17 19:35:14"
+>>>>>>> c7ae111ba3cceef0f9a08bac549e4b3df7f78363
         },
         {
             "name": "league/flysystem",
@@ -572,6 +596,7 @@
             "time": "2016-10-19 20:38:46"
         },
         {
+<<<<<<< HEAD
             "name": "maximebf/debugbar",
             "version": "v1.13.0",
             "source": {
@@ -633,6 +658,8 @@
             "time": "2016-09-15 14:01:59"
         },
         {
+=======
+>>>>>>> c7ae111ba3cceef0f9a08bac549e4b3df7f78363
             "name": "monolog/monolog",
             "version": "1.21.0",
             "source": {
@@ -901,6 +928,7 @@
             "time": "2016-10-17 15:23:22"
         },
         {
+<<<<<<< HEAD
             "name": "prettus/l5-repository",
             "version": "2.6.6",
             "source": {
@@ -1001,6 +1029,8 @@
             "time": "2015-06-08 23:53:46"
         },
         {
+=======
+>>>>>>> c7ae111ba3cceef0f9a08bac549e4b3df7f78363
             "name": "psr/log",
             "version": "1.0.2",
             "source": {
@@ -2792,6 +2822,7 @@
         },
         {
             "name": "phpunit/phpunit",
+<<<<<<< HEAD
             "version": "5.6.2",
             "source": {
                 "type": "git",
@@ -2802,6 +2833,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/cd13b23ac5a519a4708e00736c26ee0bb28b2e01",
                 "reference": "cd13b23ac5a519a4708e00736c26ee0bb28b2e01",
+=======
+            "version": "5.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit.git",
+                "reference": "60c32c5b5e79c2248001efa2560f831da11cc2d7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/60c32c5b5e79c2248001efa2560f831da11cc2d7",
+                "reference": "60c32c5b5e79c2248001efa2560f831da11cc2d7",
+>>>>>>> c7ae111ba3cceef0f9a08bac549e4b3df7f78363
                 "shasum": ""
             },
             "require": {
@@ -2870,7 +2913,11 @@
                 "testing",
                 "xunit"
             ],
+<<<<<<< HEAD
             "time": "2016-10-25 07:40:25"
+=======
+            "time": "2016-10-07 13:03:26"
+>>>>>>> c7ae111ba3cceef0f9a08bac549e4b3df7f78363
         },
         {
             "name": "phpunit/phpunit-mock-objects",
