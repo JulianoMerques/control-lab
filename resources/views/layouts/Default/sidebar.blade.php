@@ -24,25 +24,17 @@
                 </li>
             @endif
         </ul>
-<<<<<<< HEAD
+
         <a href="{{route('dashboard')}}" class="brand-logo">Control-Lab</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
         <!-- Dropdown Structure Dispositivos -->
         <ul id="dropdownMaq" class="dropdown-content">
             <li><a href="{{route('maquinas')}}">Listar</a></li>
             <li><a href="{{route('maquinas.add')}}">Cadastrar</a></li>
         </ul>
-        <!-- Dropdown Structure Sala -->
-=======
-        <a href="#!" class="brand-logo">Control-Lab</a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <!-- Dropdown Structure Maquinas -->
-        <ul id="dropdownMaq" class="dropdown-content">
-            <li><a href="#!">Listar</a></li>
-            <li><a href="#!">Cadastrar</a></li>
-        </ul>
         <!-- Dropdown Structure Laboratório -->
->>>>>>> c7ae111ba3cceef0f9a08bac549e4b3df7f78363
+
         <ul id="dropdownLab" class="dropdown-content">
             <li><a href="#!">Listar</a></li>
             <li><a href="#!">Cadastrar</a></li>
@@ -64,25 +56,17 @@
         </ul>
         <!-- Dropdown Structure Retatório -->
         <ul id="dropdownRel" class="dropdown-content">
-<<<<<<< HEAD
+
             <li><a href="#!">Dispositivos</a></li>
             <li><a href="#!">Salas</a></li>
-=======
-            <li><a href="#!">Máquinas</a></li>
-            <li><a href="#!">Laboratórios</a></li>
->>>>>>> c7ae111ba3cceef0f9a08bac549e4b3df7f78363
             <li><a href="#!">Manutenção</a></li>
             <li><a href="#!">Pedidos</a></li>
             <li><a href="#!">Usuários</a></li>
         </ul>
         <ul class="right hide-on-med-and-down">
-<<<<<<< HEAD
+
             <li><a class="dropdown-button" href="#!" data-activates="dropdownMaq">Dispositivos<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a class="dropdown-button" href="#!" data-activates="dropdownLab">Salas<i class="material-icons right">arrow_drop_down</i></a></li>
-=======
-            <li><a class="dropdown-button" href="#!" data-activates="dropdownMaq">Máquinas<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li><a class="dropdown-button" href="#!" data-activates="dropdownLab">Laboratório<i class="material-icons right">arrow_drop_down</i></a></li>
->>>>>>> c7ae111ba3cceef0f9a08bac549e4b3df7f78363
             <li><a class="dropdown-button" href="#!" data-activates="dropdownMan">Manutenção<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a class="dropdown-button" href="#!" data-activates="dropdownPed">Pedidos<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a class="dropdown-button" href="#!" data-activates="dropdownUser">Usuários<i class="material-icons right">arrow_drop_down</i></a></li>

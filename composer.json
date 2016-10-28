@@ -6,14 +6,11 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
-<<<<<<< HEAD
         "laravel/framework": "5.3.*",
         "prettus/l5-repository": "^2.6",
         "prettus/laravel-validation": "1.1.*",
         "barryvdh/laravel-debugbar": "^2.3"
-=======
-        "laravel/framework": "5.3.*"
->>>>>>> c7ae111ba3cceef0f9a08bac549e4b3df7f78363
+
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
