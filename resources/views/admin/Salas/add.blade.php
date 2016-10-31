@@ -25,6 +25,10 @@
                             <input placeholder="Capacidade" name="capacidade" id="capacidade" type="number" class="validate">
                             <label for="capacidade">Capacidade </label>
                         </div>
+                        <div class="input-field col s12 m12 l12">
+                            <textarea id="descricao"  name="descricao" class="materialize-textarea"></textarea>
+                            <label for="descricao"><Descrição></Descrição> </label>
+                        </div>
                     </div>
                     <hr>
                     <div class="row">
