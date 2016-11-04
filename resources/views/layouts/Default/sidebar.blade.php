@@ -26,7 +26,7 @@
                     </li>
                 </ul>
                 <li><a class="dropdown-button" href="#!" data-activates="dropdown">
-                        <div class="chip">
+                        <div class="chip #26a69a teal lighten-1">
                             <img src="{{\Illuminate\Support\Facades\Auth::user()->img}}" alt="Contact Person">
                             {{\Illuminate\Support\Facades\Auth::user()->nome}}
                         </div>
