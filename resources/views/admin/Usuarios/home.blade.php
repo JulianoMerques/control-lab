@@ -1,46 +1,46 @@
 @extends('layouts.Default.app')
 @section('content')
-
-
-    {{--<div class="toast #a5d6a7 green lighten-3 text-darken-5" onclick="Materialize.toast('I am a toast!', 3000, 'rounded')"></div>--}}
     <div class="container">
-        @if(\Illuminate\Support\Facades\Session::has('message'))
+        @if(Session::has('message'))
             {{ \App\Core\Helpers\AppHelper::showAlert(Session::get('message')) }}
         @endif
+
         <div class="col s12 m12 l12">
             <div class="container center-align">
-                <h4><i class="material-icons">description</i>  Lista de Salas</h4>
+                <h4><i class="material-icons">description</i> Lista de Usuários</h4>
             </div>
+
             <div class="right">
-                <a href="{{ route('salas.add') }}" class="waves-effect waves-light btn">
-                    <span class="btn-label"><i class="material-icons">library_add</i></span>Adicionar Sala</a>
+                <a href="{{ route('usuarios.add') }}" class="waves-effect waves-light btn">
+                    <span class="btn-label"><i class="material-icons">library_add</i></span>Adicionar Usuário</a>
             </div>
         </div>
-            <br>
     </div>
-
-
 
     <div class="container">
         <div class="col s12 m6 l12">
             <table class="centered striped highlight responsive-table">
                 <thead>
                 <tr>
-                    <th data-field="sala">Sala</th>
-                    <th data-field="capacidade">Capacidade</th>
+                    <th data-field="sala">Nome</th>
+                    <th data-field="capacidade">Email</th>
+                    <th data-field="capacidade">Telefone</th>
                     <th data-field="acoes">Ações</th>
                 </tr>
                 </thead>
 
                 <tbody>
-                @foreach($salas as $sala)
+                @foreach($usuarios as $usuario)
                     <tr>
-                        <td>{{$sala->nome}}</td>
-                        <td>{{$sala->capacidade}}</td>
+                        <td>{{$usuario->nome}}</td>
+                        <td>{{$usuario->email}}</td>
+                        <td>{{$usuario->telefone}}</td>
                         <td>
-                            {{--<a href="{{ route('salas.show', $sala->id)}}" class="tooltipped waves-effect waves-light btn light-blue lighten-1" data-position="bottom" data-delay="50" data-tooltip="Informação"><i class="material-icons">info</i></a>--}}
-                            <a href="{{ route('salas.edit', $sala->id)}}" class="waves-effect waves-light btn teal lighten-1 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar"><i class="material-icons">edit</i></a>
-                            <button id="delete" rel="delete-sala" data-target="confirm-delete"  class="modal-trigger waves-effect waves-light btn red darken-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Deletar" data-nome="{{$sala->nome}}" data-id="{{$sala->id}}"><i class="material-icons">delete</i></button>
+                            <a href="{{ route('usuarios.show', $usuario->id)}}" class="tooltipped waves-effect waves-light btn light-blue lighten-1" data-position="bottom" data-delay="50" data-tooltip="Informação"><i class="material-icons">info</i></a>
+                            @if(\Illuminate\Support\Facades\Auth::user()->tipo_user_id === 1)
+                                <a href="{{ route('usuarios.edit', $usuario->id)}}" class="waves-effect waves-light btn teal lighten-1 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar"><i class="material-icons">edit</i></a>
+                                <button id="delete" rel="delete-usuario" data-target="confirm-delete"  class="modal-trigger waves-effect waves-light btn red darken-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Deletar" data-nome="{{$usuario->nome}}" data-id="{{$usuario->id}}"><i class="material-icons">delete</i></button>
+                            @endif
                         </td>
                     </tr>
                 @endforeach
@@ -49,11 +49,11 @@
 
         </div>
     </div>
+
 @endsection
 @section('modal')
     <div id="confirm-delete" class="modal">
         <div class="container">
-
             <div class="modal-content">
                 <div class="modal-header"></div>
                 <div class="modal-body">
@@ -61,7 +61,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <form name="formArquivoDelete" method="POST" class="form-horizontal" action="{{ route('salas.delete', 'ID') }}" enctype="multipart/form-data">
+                <form name="formArquivoDelete" method="POST" class="form-horizontal" action="{{ route('usuarios.delete', 'ID') }}" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <input type="hidden" name="_method" value="DELETE">
                     <button type="button" class="btn btn-default" rel="close">Não</button>
@@ -75,11 +75,11 @@
 @section('script')
     <script>
         $(document).ready(function(){
-            $('button[rel=delete-sala]').click( function () {
+            $('button[rel=delete-usuario]').click( function () {
                 //VARIAVEIS
                 var dataNome = $(this).data('nome');
                 var dataId = $(this).data('id');
-                var titleModal = 'Tem certeza de que deseja excluir a sala <strong>'+dataNome+'</strong> ?';
+                var titleModal = 'Tem certeza de que deseja excluir o usuário <strong>'+dataNome+'</strong> ?';
                 var action = $('#confirm-delete form').attr('action');
                 action = action.replace('ID', dataId);
 

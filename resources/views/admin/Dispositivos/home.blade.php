@@ -1,6 +1,7 @@
 @extends('layouts.Default.app')
 
 @section('content')
+    <div class="container">
     @if(Session::has('message'))
         {{ \App\Core\Helpers\AppHelper::showMessage(Session::get('message')) }}
     @endif
@@ -16,6 +17,7 @@
             <a href="{{ route('maquinas.add') }}" class="waves-effect waves-light btn">
                 <span class="btn-label"><i class="material-icons">library_add</i></span>Adicionar Dispositivo</a>
         </div>
+    </div>
     </div>
     <div class="row container">
         <div class="col s12 m6 l12">

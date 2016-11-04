@@ -1,26 +1,37 @@
 <!-- SIDE BAR-->
 <nav class="navbar-fixed">
     <div class="nav-wrapper  #26a69a teal lighten-1">
+
+
         <ul class="right hide-on-med-and-down">
             <!-- Authentication Links -->
             @if (Auth::guest())
                 <li><a href="{{ url('/login') }}">Login</a></li>
                 <li><a href="{{ url('/register') }}">Register</a></li>
             @else
-                <li class="dropdown">
-                    <ul class="dropdown-menu" role="menu">
-                        <li>
-                            <a href="{{ url('/logout') }}"
-                               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                <i class="material-icons">settings_power</i>
-                            </a>
-
-                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
-                        </li>
-                    </ul>
+            <!-- Dropdown Structure User -->
+                <ul id="dropdown" class="dropdown-content">
+                    <li>
+                        <a href="{{ url('/logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            <i class="material-icons">settings_power</i>Logout
+                        </a>
+                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </li>
+                    <li><a href="">
+                            {{--<i class="material-icons">settings</i>--}}
+                            <i class="material-icons prefix">account_circle</i>Perfil
+                        </a>
+                    </li>
+                </ul>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown">
+                        <div class="chip">
+                            <img src="{{\Illuminate\Support\Facades\Auth::user()->img}}" alt="Contact Person">
+                            {{\Illuminate\Support\Facades\Auth::user()->nome}}
+                        </div>
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
                 </li>
             @endif
         </ul>
@@ -51,8 +62,8 @@
         </ul>
         <!-- Dropdown Structure Usuarios -->
         <ul id="dropdownUser" class="dropdown-content">
-            <li><a href="#!">Listar</a></li>
-            <li><a href="#!">Cadastrar</a></li>
+            <li><a href="{{route('usuarios')}}">Listar</a></li>
+            <li><a href="{{route('usuarios.add')}}">Cadastrar</a></li>
         </ul>
         <!-- Dropdown Structure Retatório -->
         <ul id="dropdownRel" class="dropdown-content">
@@ -64,7 +75,6 @@
             <li><a href="#!">Usuários</a></li>
         </ul>
         <ul class="right hide-on-med-and-down">
-
             <li><a class="dropdown-button" href="#!" data-activates="dropdownMaq">Dispositivos<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a class="dropdown-button" href="#!" data-activates="dropdownLab">Salas<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a class="dropdown-button" href="#!" data-activates="dropdownMan">Manutenção<i class="material-icons right">arrow_drop_down</i></a></li>

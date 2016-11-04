@@ -18,7 +18,7 @@ Route::group(['prefix' => 'admin'], function(){
 
     Route::get('/home',['as' => 'dashboard', 'uses' => 'AdminController@index']);
 
-    //MAQUINAS
+    //Dispositivos
     Route::group(['prefix' => 'maquinas'], function() {
         Route::get('/', ['as' => 'maquinas', 'uses' => 'MaquinasController@index']);
         Route::get('add', ['as' => 'maquinas.add', 'uses' => 'MaquinasController@store']);
@@ -52,7 +52,13 @@ Route::group(['prefix' => 'admin'], function(){
 
     //USUARIOS
     Route::group(['prefix' => 'usuarios'], function() {
-
+        Route::get('/', ['as' => 'usuarios', 'uses' => 'UsuariosController@index']);
+        Route::get('add', ['as' => 'usuarios.add', 'uses' => 'UsuariosController@store']);
+        Route::post('add', ['as' => 'usuarios.create', 'uses' => 'UsuariosController@create']);
+        Route::get('{id}/info', ['as' => 'usuarios.show', 'uses' => 'UsuariosController@show']);
+        Route::get('{id}/edit', ['as' => 'usuarios.edit', 'uses' => 'UsuariosController@edit']);
+        Route::post('{id}/edit', ['as' => 'usuarios.update', 'uses' => 'UsuariosController@update']);
+        Route::delete('{id}', ['as' => 'usuarios.delete', 'uses' => 'UsuariosController@destroy']);
     });
 });
 

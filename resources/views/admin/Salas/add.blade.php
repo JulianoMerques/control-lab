@@ -27,7 +27,7 @@
                         </div>
                         <div class="input-field col s12 m12 l12">
                             <textarea id="descricao"  name="descricao" class="materialize-textarea"></textarea>
-                            <label for="descricao"><Descrição></Descrição> </label>
+                            <label for="descricao">Descrição</label>
                         </div>
                     </div>
                     <hr>
