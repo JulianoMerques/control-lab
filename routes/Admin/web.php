@@ -42,12 +42,24 @@ Route::group(['prefix' => 'admin'], function(){
 
     //MANUTENÇÃO
     Route::group(['prefix' => 'manutencao'], function() {
-
+        Route::get('/', ['as' => 'manutencao', 'uses' => 'ManutencaoController@index']);
+        Route::get('{id}/add', ['as' => 'manutencao.add', 'uses' => 'ManutencaoController@store']);
+        Route::post('add', ['as' => 'manutencao.create', 'uses' => 'ManutencaoController@create']);
+        Route::get('{id}/info', ['as' => 'manutencao.show', 'uses' => 'ManutencaoController@show']);
+        Route::get('{id}/edit', ['as' => 'manutencao.edit', 'uses' => 'ManutencaoController@edit']);
+        Route::post('{id}/edit', ['as' => 'manutencao.update', 'uses' => 'ManutencaoController@update']);
+        Route::delete('{id}', ['as' => 'manutencao.delete', 'uses' => 'ManutencaoController@destroy']);
     });
 
     //PEDIDOS
     Route::group(['prefix' => 'pedidos'], function() {
-
+        Route::get('/', ['as' => 'pedidos', 'uses' => 'PedidosController@index']);
+        Route::get('add', ['as' => 'pedidos.add', 'uses' => 'PedidosController@store']);
+        Route::post('add', ['as' => 'pedidos.create', 'uses' => 'PedidosController@create']);
+        Route::get('{id}/info', ['as' => 'pedidos.show', 'uses' => 'PedidosController@show']);
+        Route::get('{id}/edit', ['as' => 'pedidos.edit', 'uses' => 'PedidosController@edit']);
+        Route::post('{id}/edit', ['as' => 'pedidos.update', 'uses' => 'PedidosController@update']);
+        Route::delete('{id}', ['as' => 'pedidos.delete', 'uses' => 'PedidosController@destroy']);
     });
 
     //USUARIOS
