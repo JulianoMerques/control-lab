@@ -43,7 +43,6 @@
     <!-- END Sidebar (left)-->
     </aside>
     <!-- End aside-->
-
     <div class="row">
         <div>
             <!-- START Main section-->
@@ -59,9 +58,6 @@
 
     </div>
     @yield('modal')
-
-
-
 </section>
 <!-- END Main wrapper-->
 
