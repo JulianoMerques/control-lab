@@ -2,6 +2,7 @@
 
 namespace App\Domains\Salas\Entities;
 
+use App\Domains\Pedido\Entities\Pedido;
 use Illuminate\Database\Eloquent\Model;
 
 class Sala extends Model
@@ -18,5 +19,8 @@ class Sala extends Model
         'nome', 'capacidade','descricao'
     ];
 
+    public function pedidoSala(){
+        return $this->hasMany(Pedido::class);
+    }
 
 }

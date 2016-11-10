@@ -1,6 +1,8 @@
 <?php
 namespace App\Domains\Usuario\Entities;
 
+use App\Domains\Manutencao\Entities\Manutencao;
+use App\Domains\Pedido\Entities\Pedido;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Usuario extends Authenticatable
@@ -24,4 +26,12 @@ class Usuario extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    public function pedido(){
+        return $this->hasMany(Pedido::class);
+    }
+    public function manutencao(){
+        return $this->hasMany(Manutencao::class);
+    }
 }

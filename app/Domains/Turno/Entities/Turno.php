@@ -18,5 +18,9 @@ class Turno extends Model
         'turno'
     ];
 
+    public function manutencao(){
+        return $this->hasMany(Manutencao::class);
+    }
+
 
 }
