@@ -41,6 +41,9 @@ class Pedido extends Model
     public function tipo_manutencao(){
         return $this->belongsTo(TipoManutencao::class);
     }
+    public function manutencao(){
+        return $this->belongsTo(Manutencao::class);
+    }
 
 
 }

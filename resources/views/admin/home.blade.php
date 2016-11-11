@@ -19,8 +19,8 @@
             <div class="col s12 m12 l6 center-align">
                 <div class="card">
                     <div class="card-panel green">
-                        <span class="white-text">Numero De Pedidos:</span><br>
-                        <span class="white-text">200</span>
+                        <span class="white-text">Número De Pedidos:</span><br>
+                        <span class="white-text">{{$pedidos}}</span>
 
                     </div>
                 </div>
@@ -29,8 +29,8 @@
             <div class="col s12 m12 l6 center-align">
                 <div class="card">
                     <div class="card-panel #1565c0 blue darken-3">
-                        <span class="white-text">Numero De Manutenções:</span><br>
-                        <span class="white-text">200</span>
+                        <span class="white-text">Número De Manutenções:</span><br>
+                        <span class="white-text">{{$manutencoes}}</span>
                     </div>
 
                 </div>
@@ -39,8 +39,8 @@
             <div class="col s12 m12 l6 center-align">
                 <div class="card">
                     <div class="card-panel #fb8c00 orange darken-3">
-                        <span class="white-text">Numero De Salas:</span><br>
-                        <span class="white-text">200</span>
+                        <span class="white-text">Número De Salas:</span><br>
+                        <span class="white-text">{{$salas}}</span>
                     </div>
                 </div>
             </div>
@@ -48,8 +48,8 @@
             <div class="col s12 m12 l6 center-align ">
                 <div class="card">
                     <div class="card-panel #d84315 deep-orange darken-3">
-                        <span class="white-text">Numero De Dispositivos:</span><br>
-                        <span class="white-text">2000</span>
+                        <span class="white-text">Número De Dispositivos:</span><br>
+                        <span class="white-text">{{$dispositivos}}</span>
                     </div>
 
                 </div>

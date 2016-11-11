@@ -19,8 +19,8 @@
     <!-- Scripts -->
     <script>
         $( document ).ready(function(){
-            $(".button-collapse").sideNav();
             $(".dropdown-button").dropdown();
+            $(".button-collapse").sideNav();
             $('select').material_select();
             $('.tooltipped').tooltip({delay: 50});
         });

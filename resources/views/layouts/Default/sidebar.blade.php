@@ -19,7 +19,6 @@
                         </form>
                     </li>
                     <li><a href="{{route('usuarios.show', \Illuminate\Support\Facades\Auth::user()->id)}}">
-                            {{--<i class="material-icons">settings</i>--}}
                             <i class="material-icons prefix">account_circle</i>Perfil
                         </a>
                     </li>
@@ -39,6 +38,7 @@
         <a href="{{route('dashboard')}}" class="brand-logo">Control-Lab V 1.1</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
+        {{------------------------------estrutura de menus------------------------------------------}}
         <!-- Dropdown Structure Dispositivos -->
         <ul id="dropdownMaq" class="dropdown-content">
             <li><a href="{{route('maquinas')}}">Listar</a></li>
@@ -69,13 +69,14 @@
         </ul>
         <!-- Dropdown Structure Retatório -->
         <ul id="dropdownRel" class="dropdown-content">
-
             <li><a href="#!">Dispositivos</a></li>
             <li><a href="#!">Salas</a></li>
             <li><a href="#!">Manutenção</a></li>
             <li><a href="#!">Pedidos</a></li>
             <li><a href="#!">Usuários</a></li>
         </ul>
+        {{------------------------------fim estrutura de menus------------------------------------------}}
+
         <ul class="right hide-on-med-and-down">
             <li><a class="dropdown-button" href="#!" data-activates="dropdownLab">Salas<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a class="dropdown-button" href="#!" data-activates="dropdownMaq">Dispositivos<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -84,13 +85,69 @@
             <li><a class="dropdown-button" href="#!" data-activates="dropdownUser">Usuários<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a class="dropdown-button" href="#!" data-activates="dropdownRel">Relatórios<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
+
+        {{------------------------------estrutura de menus moblile------------------------------------------}}
+        <ul id="dropMaqMobile" class="dropdown-content">
+            <li><a href="{{route('maquinas')}}">Listar</a></li>
+            <li><a href="{{route('maquinas.add')}}">Cadastrar</a></li>
+        </ul>
+        {{--------------------------------------------------------------------------------------------------}}
+        <ul id="dropLabMobile" class="dropdown-content">
+            <li><a href="{{route('salas')}}">Listar</a></li>
+            <li><a href="{{route('salas.add')}}">Cadastrar</a></li>
+        </ul>
+        {{--------------------------------------------------------------------------------------------------}}
+        <ul id="dropPedMobile" class="dropdown-content">
+            <li><a href="{{route('pedidos')}}">Listar</a></li>
+            <li><a href="{{route('pedidos.add')}}">Cadastrar</a></li>
+        </ul>
+        {{--------------------------------------------------------------------------------------------------}}
+        <ul id="dropManMobile" class="dropdown-content">
+            <li><a href="{{route('manutencao')}}">Listar</a></li>
+            <li><a href="#!">Cadastrar</a></li>
+        </ul>
+        {{--------------------------------------------------------------------------------------------------}}
+        <ul id="dropRelMobile" class="dropdown-content">
+            <li><a href="#!">Dispositivos</a></li>
+            <li><a href="#!">Salas</a></li>
+            <li><a href="#!">Manutenção</a></li>
+            <li><a href="#!">Pedidos</a></li>
+            <li><a href="#!">Usuários</a></li>
+        </ul>
+        {{--------------------------------------------------------------------------------------------------}}
+        <ul id="dropMobile" class="dropdown-content">
+            <li>
+                <a href="{{ url('/logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                    <i class="material-icons">settings_power</i>Logout
+                </a>
+                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </li>
+            <li><a href="{{route('usuarios.show', \Illuminate\Support\Facades\Auth::user()->id)}}">
+                    {{--<i class="material-icons">settings</i>--}}
+                    <i class="material-icons prefix">account_circle</i>Perfil
+                </a>
+            </li>
+        </ul>
+
+        {{-----------------------------fim estrutura de menus moblile----------------------------------------}}
         <ul class="side-nav" id="mobile-demo">
-            {{--<li><a class="dropdown-button" data-activates="dropdownLab">Salas</a></li>--}}
-            {{--<li><a  class="dropdown-button" data-activates="dropdownMaq">Dispositivos</a></li>--}}
-            {{--<li><a class="dropdown-button" data-activates="dropdownPed">Pedidos</a></li>--}}
-            {{--<li><a class="dropdown-button" data-activates="dropdownMan">Manutenção</a></li>--}}
-            {{--<li><a class="dropdown-button" data-activates="dropdownUser">Usuários</a></li>--}}
-            {{--<li><a class="dropdown-button" data-activates="dropdownRel">Relatórios</a></li>--}}
+            <li><a class="dropdown-button" href="#!" data-activates="dropLabMobile">Salas</a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropMaqMobile">Dispositivos</a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropPedMobile">Pedidos</a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropManMobile">Manutenção</a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropMaqMobile">Usuários</a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropdownRel">Relatórios</a></li>
+            <li>
+                <a class="dropdown-button" href="#!" data-activates="dropMobile">
+                    <div class="chip white">
+                        <img src="{{\Illuminate\Support\Facades\Auth::user()->img}}" alt="Contact Person">
+                        {{\Illuminate\Support\Facades\Auth::user()->nome}}
+                    </div>
+                    <i class="material-icons right">arrow_drop_down</i>
+                </a>
+            </li>
         </ul>
 
 

@@ -63,18 +63,12 @@ class ManutencaoController extends BaseController {
 
     public function create(Request $request)
     {
-//        dd($request->all());
         return $this->service->store($request->except('_token', 'Salvar'));
     }
 
-    public function show($protocolo){
-//        $situacao = $this->repository->find($protocolo);
-//        if ($situacao['situacao'] === 0){
-//            $this->repository->update( ['situacao' => '1'],$protocolo);
-//        }
-//
-//        $pedidos = $this->repository->find($protocolo);
-//        return $this->view('Pedidos.info', compact('pedidos'));
+    public function show($id){
+        $manutencao = $this->repository->find($id);
+        return $this->view('Manutencao.info', compact('manutencao'));
     }
 
     public function edit($id)

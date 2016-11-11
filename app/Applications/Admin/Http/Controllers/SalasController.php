@@ -34,8 +34,8 @@ class SalasController extends BaseController {
     }
     public function show($id){
 //        return $this->service->show($id);
-        $maquina = $this->repository->find($id);
-        return $this->view('Dispositivos.info', compact('maquina'));
+        $sala = $this->repository->find($id);
+        return $this->view('Salas.info', compact('sala'));
     }
 
     public function edit($id)
