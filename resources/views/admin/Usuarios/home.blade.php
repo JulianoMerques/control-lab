@@ -7,12 +7,12 @@
 
         <div class="col s12 m12 l12">
             <div class="container center-align">
-                <h4><i class="material-icons">description</i> Lista de Usuários</h4>
+                <h4>Lista de Usuários</h4>
             </div>
 
             <div class="right">
-                <a href="{{ route('usuarios.add') }}" class="waves-effect waves-light btn">
-                    <span class="btn-label"><i class="material-icons">library_add</i></span>Adicionar Usuário</a>
+                <a href="{{ route('usuarios.add') }}" class="waves-effect waves-light btn green">
+                    <span><i class="material-icons">library_add</i></span>Adicionar Usuário</a>
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@
                     <th data-field="sala">Nome</th>
                     <th data-field="capacidade">Email</th>
                     <th data-field="capacidade">Telefone</th>
-                    <th data-field="acoes">Ações</th>
+                    <th data-field="acoes" width="10%">Ações</th>
                 </tr>
                 </thead>
 
@@ -36,10 +36,10 @@
                         <td>{{$usuario->email}}</td>
                         <td>{{$usuario->telefone}}</td>
                         <td>
-                            <a href="{{ route('usuarios.show', $usuario->id)}}" class="tooltipped waves-effect waves-light btn light-blue lighten-1" data-position="bottom" data-delay="50" data-tooltip="Informação"><i class="material-icons">info</i></a>
+                            <a href="{{ route('usuarios.show', $usuario->id)}}" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Informação"><i class="material-icons blue-text">info</i></a>
                             @if(\Illuminate\Support\Facades\Auth::user()->tipo_user_id === 1)
-                                <a href="{{ route('usuarios.edit', $usuario->id)}}" class="waves-effect waves-light btn teal lighten-1 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar"><i class="material-icons">edit</i></a>
-                                <button id="delete" rel="delete-usuario" data-target="confirm-delete"  class="modal-trigger waves-effect waves-light btn red darken-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Deletar" data-nome="{{$usuario->nome}}" data-id="{{$usuario->id}}"><i class="material-icons">delete</i></button>
+                                <a href="{{ route('usuarios.edit', $usuario->id)}}" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar"><i class="material-icons green-text">edit</i></a>
+                                <a id="delete" rel="delete-usuario" data-target="confirm-delete"  class="modal-trigger tooltipped" data-position="bottom" data-delay="50" data-tooltip="Deletar" data-nome="{{$usuario->nome}}" data-id="{{$usuario->id}}"><i class="material-icons red-text">delete</i></a>
                             @endif
                         </td>
                     </tr>
@@ -75,7 +75,7 @@
 @section('script')
     <script>
         $(document).ready(function(){
-            $('button[rel=delete-usuario]').click( function () {
+            $('a[rel=delete-usuario]').click( function () {
                 //VARIAVEIS
                 var dataNome = $(this).data('nome');
                 var dataId = $(this).data('id');

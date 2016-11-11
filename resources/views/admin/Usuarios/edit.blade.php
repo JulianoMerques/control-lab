@@ -6,7 +6,7 @@
             {{ \App\Core\Helpers\AppHelper::showMessage(Session::get('message')) }}
         @endif
         <div class="col s12 m12 l12 center-align">
-            <h5>Adicionar Usuário</h5>
+            <h5>Editar Usuário</h5>
         </div>
 
         <div class="row">
@@ -50,7 +50,7 @@
                         </div>
                         <div class="col s12 m12 l6">
                             <div class="file-field input-field">
-                                <div class="btn">
+                                <div class="btn green">
                                     <span>Foto</span>
                                     <input name="img" type="file">
                                 </div>
@@ -64,7 +64,7 @@
                     <hr>
                     <div class="row">
                         <div class="col s12">
-                            <input type="submit" name="enviar" value="Enviar" class="btn btn-primary pull-right">
+                            <input type="submit" name="enviar" value="Enviar" class="btn btn-primary pull-right green">
                         </div>
                     </div>
                 </form>

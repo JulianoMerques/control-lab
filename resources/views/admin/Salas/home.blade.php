@@ -9,11 +9,11 @@
         @endif
         <div class="col s12 m12 l12">
             <div class="container center-align">
-                <h4><i class="material-icons">description</i>  Lista de Salas</h4>
+                <h4>Lista de Salas</h4>
             </div>
             <div class="right">
-                <a href="{{ route('salas.add') }}" class="waves-effect waves-light btn">
-                    <span class="btn-label"><i class="material-icons">library_add</i></span>Adicionar Sala</a>
+                <a href="{{ route('salas.add') }}" class="waves-effect waves-light btn green">
+                    <span><i class="material-icons">library_add</i></span>  Adicionar Sala</a>
             </div>
         </div>
             <br>
@@ -23,12 +23,12 @@
 
     <div class="container">
         <div class="col s12 m6 l12">
-            <table class="centered striped highlight responsive-table">
+            <table class="centered highlight responsive-table">
                 <thead>
                 <tr>
                     <th data-field="sala">Sala</th>
                     <th data-field="capacidade">Capacidade</th>
-                    <th data-field="acoes">Ações</th>
+                    <th data-field="acoes" width="10%">Ações</th>
                 </tr>
                 </thead>
 
@@ -38,9 +38,9 @@
                         <td>{{$sala->nome}}</td>
                         <td>{{$sala->capacidade}}</td>
                         <td>
-                            {{--<a href="{{ route('salas.show', $sala->id)}}" class="tooltipped waves-effect waves-light btn light-blue lighten-1" data-position="bottom" data-delay="50" data-tooltip="Informação"><i class="material-icons">info</i></a>--}}
-                            <a href="{{ route('salas.edit', $sala->id)}}" class="waves-effect waves-light btn teal lighten-1 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar"><i class="material-icons">edit</i></a>
-                            <button id="delete" rel="delete-sala" data-target="confirm-delete"  class="modal-trigger waves-effect waves-light btn red darken-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Deletar" data-nome="{{$sala->nome}}" data-id="{{$sala->id}}"><i class="material-icons">delete</i></button>
+                            <a href="{{ route('salas.show', $sala->id)}}" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Informação"><i class="material-icons blue-text">info</i></a>
+                            <a href="{{ route('salas.edit', $sala->id)}}" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar"><i class="material-icons green-text">edit</i></a>
+                            <a id="delete" rel="delete-sala" data-target="confirm-delete"  class="modal-trigger  tooltipped" data-position="bottom" data-delay="50" data-tooltip="Deletar" data-nome="{{$sala->nome}}" data-id="{{$sala->id}}"><i class="material-icons red-text">delete</i></a>
                         </td>
                     </tr>
                 @endforeach
@@ -53,11 +53,10 @@
 @section('modal')
     <div id="confirm-delete" class="modal">
         <div class="container">
-
             <div class="modal-content">
                 <div class="modal-header"></div>
                 <div class="modal-body">
-                    <p>Se você excluir dispositivo não terá a opção de recuperá-lo.</p>
+                    <p>Se você excluir a sala não terá a opção de recuperá-lo.</p>
                 </div>
             </div>
             <div class="modal-footer">
@@ -75,7 +74,7 @@
 @section('script')
     <script>
         $(document).ready(function(){
-            $('button[rel=delete-sala]').click( function () {
+            $('a[rel=delete-sala]').click( function () {
                 //VARIAVEIS
                 var dataNome = $(this).data('nome');
                 var dataId = $(this).data('id');

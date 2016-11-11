@@ -1,7 +1,7 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: jmerques
- * Date: 28/10/16
- * Time: 14:07
- */
+@extends('layouts.Default.app')
+
+@section('content')
+    <div class="container center">
+        <h1>Em construção</h1>
+    </div>
+@endsection

@@ -7,7 +7,7 @@
     <div class="container ">
         <div class="row col s12 m12 l12">
             <div class="col col s12 m12 l12">
-                <h5><i class="material-icons">computer</i> Adcionar Dispositivo </h5>
+                <h5><i class="material-icons">computer</i> Cadastrar Dispositivo </h5>
             </div>
 
         </div>
@@ -47,15 +47,15 @@
                             <input placeholder="Nome" name="nome" id="nome" type="text" class="validate">
                             <label for="nome">Nome</label>
                         </div>
-                        <div class="input-field col s12 m10 l6">
+                        <div class="input-field col s12 m10 l12">
                             <textarea id="configuracao"  name="configuracao" class="materialize-textarea"></textarea>
-                            <label for="configuracao"><i class="material-icons">settings</i> Configuração </label>
+                            <label for="configuracao"> Configuração </label>
                         </div>
                     </div>
                     <hr>
                     <div class="row">
                         <div class="col s12">
-                            <input type="submit" name="enviar" value="Enviar" class="btn btn-primary pull-right">
+                            <input type="submit" name="enviar" value="Enviar" class="btn btn-primary pull-right green">
                         </div>
                     </div>
                 </form>

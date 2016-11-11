@@ -9,41 +9,37 @@
     <div class="row col s12 m12 l12">
         <div class="container center-align">
             <div class="col col s12 m12 l12">
-                <h4><i class="material-icons">description</i> Lista Dispositivos </h4>
+                <h4>Lista Dispositivos </h4>
             </div>
         </div>
 
         <div class="right">
-            <a href="{{ route('maquinas.add') }}" class="waves-effect waves-light btn">
-                <span class="btn-label"><i class="material-icons">library_add</i></span>Adicionar Dispositivo</a>
+            <a href="{{ route('maquinas.add') }}" class="waves-effect waves-light btn green">
+                <span><i class="material-icons">library_add</i></span>Adicionar Dispositivo</a>
         </div>
     </div>
     </div>
     <div class="row container">
         <div class="col s12 m6 l12">
-            <table class="centered striped responsive-table">
+            <table class="centered highlight responsive-table">
                 <thead>
                 <tr>
-                    <th>Nome</th>
-                    {{--<th>Mac</th>--}}
-                    <th>Laboratório</th>
-                    <th>Patrimonio</th>
-                    {{--<th>Configuração</th>--}}
-                    <th>Ações</th>
+                    <th data-field="nome">Nome</th>
+                    <th data-field="laboratorio">Laboratório</th>
+                    <th data-field="patrimonio"> Patrimonio</th>
+                    <th data-field="acoes" width="10%">Ações</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($maquinas as $maquina)
                     <tr id="tr-{{$maquina->id}}">
                         <td>{{$maquina->nome}}</td>
-                        {{--<td>{{$maquina->mac}}</td>--}}
                         <td>{{$maquina->laboratorios_id}}</td>
                         <td>{{$maquina->patrimonio}}</td>
-                        {{--<td>{{$maquina->configuracao}}</td>--}}
                         <td>
-                            <a href="{{ route('maquinas.show', $maquina->id)}}" class="tooltipped waves-effect waves-light btn light-blue lighten-1" data-position="bottom" data-delay="50" data-tooltip="Informação"><i class="material-icons">info</i></a>
-                            <a href="{{ route('maquinas.edit', $maquina->id)}}" class="waves-effect waves-light btn teal lighten-1 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar"><i class="material-icons">edit</i></a>
-                            <button id="delete" rel="delete-maquina" data-target="confirm-delete"  class="modal-trigger waves-effect waves-light btn red darken-2 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Deletar" data-nome="{{$maquina->nome}}" data-id="{{$maquina->id}}"><i class="material-icons">delete</i></button>
+                            <a href="{{ route('maquinas.show', $maquina->id)}}" class="tooltipped " data-position="bottom" data-delay="50" data-tooltip="Informação"><i class="material-icons blue-text">info</i></a>
+                            <a href="{{ route('maquinas.edit', $maquina->id)}}" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar"><i class="material-icons green-text">edit</i></a>
+                            <a id="delete" rel="delete-maquina" data-target="confirm-delete"  class="modal-trigger tooltipped" data-position="bottom" data-delay="50" data-tooltip="Deletar" data-nome="{{$maquina->nome}}" data-id="{{$maquina->id}}"><i class="material-icons red-text">delete</i></a>
                         </td>
                     </tr>
                 @endforeach
@@ -56,14 +52,13 @@
 @section('modal')
     <div id="confirm-delete" class="modal">
         <div class="container">
-            <div class="modal-header"></div>
-            <hr>
+
             <div class="modal-content">
+                <div class="modal-header"></div>
                 <div class="modal-body">
                     <p>Se você excluir dispositivo não terá a opção de recuperá-lo.</p>
                 </div>
             </div>
-            <hr>
             <div class="modal-footer">
                 <form name="formArquivoDelete" method="POST" class="form-horizontal" action="{{ route('maquinas.delete', 'ID') }}" enctype="multipart/form-data">
                     {{ csrf_field() }}
@@ -80,7 +75,7 @@
 @section('script')
     <script>
         $(document).ready(function(){
-            $('button[rel=delete-maquina]').click( function () {
+            $('a[rel=delete-maquina]').click( function () {
                 //VARIAVEIS
                 var dataNome = $(this).data('nome');
                 var dataId = $(this).data('id');
