@@ -7,16 +7,17 @@
         @if(\Illuminate\Support\Facades\Session::has('message'))
             {{ \App\Core\Helpers\AppHelper::showAlert(Session::get('message')) }}
         @endif
+        {{--<input type="hidden" id="message" class="toast #a5d6a7 green lighten-3" value="Teste" name="message">'--}}
         <div class="col s12 m12 l12">
             <div class="container center-align">
                 <h4>Lista de Salas</h4>
             </div>
-            <div class="right">
-                <a href="{{ route('salas.add') }}" class="waves-effect waves-light btn green">
-                    <span><i class="material-icons">library_add</i></span>  Adicionar Sala</a>
-            </div>
+            {{--<div class="right">--}}
+            {{--<a href="{{ route('salas.add') }}" class="waves-effect waves-light btn green">--}}
+            {{--<span><i class="material-icons">library_add</i></span>  Adicionar Sala</a>--}}
+            {{--</div>--}}
         </div>
-            <br>
+        <br>
     </div>
 
 
@@ -48,6 +49,11 @@
             </table>
 
         </div>
+        <div class="fixed-action-btn">
+            <a href="{{route('salas.add')}}" class="btn-floating btn-large waves-effect waves-light green tooltipped" data-position="top" data-delay="50" data-tooltip="Cadastrar">
+                <i class="material-icons">add</i>
+            </a>
+        </div>
     </div>
 @endsection
 @section('modal')
@@ -74,6 +80,11 @@
 @section('script')
     <script>
         $(document).ready(function(){
+
+            var message = document.getElementById('message').value;
+            Materialize.toast(message, 4000)
+
+
             $('a[rel=delete-sala]').click( function () {
                 //VARIAVEIS
                 var dataNome = $(this).data('nome');
@@ -102,6 +113,8 @@
             $('button[rel=close]').on('click',function () {
                 $('#confirm-delete').closeModal();
             });
+
+
         });
 
     </script>

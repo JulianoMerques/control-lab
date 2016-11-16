@@ -21,7 +21,8 @@ class AppHelper {
                 break;
         }
 
-        echo '<div id="alertMessage" class="black-text ' . $typeMessage . '">' . $icon . '  ' . $messageText . '</div>';
+//        echo '<div id="alertMessage" class="black-text ' . $typeMessage . '">' . $icon . '  ' . $messageText . '</div>';
+        echo '<input type="hidden" id="message" class="toast '.$typeMessage.'" value="'.$messageText.'" name="message">';
     }
 
     static function showAlert($message){
@@ -40,7 +41,8 @@ class AppHelper {
                 break;
         }
 
-        echo '<div class="toast '.$typeMessage.'"><i class="material-icons">'.$icon.'</i> '.$messageText.'</div>';
+//        echo '<div class="toast '.$typeMessage.'"><i class="material-icons">'.$icon.'</i> '.$messageText.'</div>';
+        echo '<input type="hidden" id="message" class="toast '.$typeMessage.'" value="'.$messageText.'" name="message">';
     }
 
     static function returnCurrentRoute()
