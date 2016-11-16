@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Domains\Salas\Validators;
+namespace App\Domains\Laboratorios\Validators;
 
 use Prettus\Validator\LaravelValidator;
 use Prettus\Validator\Contracts\ValidatorInterface;
 
-class SalaValidator extends LaravelValidator
+class LaboratorioValidator extends LaravelValidator
 {
     public $rules = [
         ValidatorInterface::RULE_CREATE => [

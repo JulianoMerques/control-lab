@@ -2,6 +2,7 @@
 
 namespace App\Domains\Pedido\Entities;
 
+use App\Domains\Laboratorios\Entities\Laboratorios;
 use App\Domains\Manutencao\Entities\Manutencao;
 use App\Domains\Maquina\Entities\Maquina;
 use App\Domains\Problema\Entities\Problema;
@@ -22,7 +23,7 @@ class Pedido extends Model
      */
 
     protected $fillable = [
-       'id', 'usuario_id', 'laboratorios_id','maquinas_id', 'problema_id','tipo_manutencao_id','descricao', 'situacao'
+       'protocolo', 'usuario_id', 'laboratorios_id','maquinas_id', 'problema_id','tipo_manutencao_id','descricao', 'situacao'
     ];
 
 
@@ -30,7 +31,7 @@ class Pedido extends Model
         return $this->belongsTo(Usuario::class);
     }
     public function laboratorios(){
-        return $this->belongsTo(Sala::class);
+        return $this->belongsTo(Laboratorios::class);
     }
     public function maquinas(){
         return $this->belongsTo(Maquina::class);

@@ -23,6 +23,7 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/', ['as' => 'maquinas', 'uses' => 'MaquinasController@index']);
         Route::get('add', ['as' => 'maquinas.add', 'uses' => 'MaquinasController@store']);
         Route::post('add', ['as' => 'maquinas.create', 'uses' => 'MaquinasController@create']);
+        Route::get('{id}', ['as' => 'maquinas.laboratorios', 'uses' => 'MaquinasController@getMaquinas']);
         Route::get('{id}/info', ['as' => 'maquinas.show', 'uses' => 'MaquinasController@show']);
         Route::get('{id}/edit', ['as' => 'maquinas.edit', 'uses' => 'MaquinasController@edit']);
         Route::post('{id}/edit', ['as' => 'maquinas.update', 'uses' => 'MaquinasController@update']);

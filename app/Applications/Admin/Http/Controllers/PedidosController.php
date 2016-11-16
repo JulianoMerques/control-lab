@@ -4,11 +4,11 @@ namespace App\Applications\Admin\Http\Controllers;
 
 
 
+use App\Domains\Laboratorios\Repositories\LaboratorioRepository;
 use App\Domains\Maquina\Repositories\MaquinaRepository;
 use App\Domains\Pedido\Repositories\PedidoRepository;
 use App\Domains\Pedido\Services\PedidoService;
 use App\Domains\Problema\Repositories\ProblemaRepository;
-use App\Domains\Salas\Repositories\SalaRepository;
 use App\Domains\TipoManutencao\Repositories\TipoManutencaoRepository;
 use App\Domains\TipoUser\Repositories\TipoRepository;
 use App\Domains\Turno\Repositories\TurnoRepository;
@@ -37,7 +37,7 @@ class PedidosController extends BaseController {
     private $tipoRepository;
 
     public function __construct(UsuarioRepository $usuarioRepository, PedidoRepository $repository, PedidoService $service,
-                               TipoManutencaoRepository $tipoRepository, SalaRepository $salaRepository,
+                               TipoManutencaoRepository $tipoRepository, LaboratorioRepository $salaRepository,
                                 MaquinaRepository $maquinaRepository, ProblemaRepository $problemaRepository)
     {
         $this->middleware('auth');

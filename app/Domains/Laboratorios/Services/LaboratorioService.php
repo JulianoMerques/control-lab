@@ -3,18 +3,16 @@
  * @author 4UpWeb <contato@4upweb.com>
  */
 
-namespace App\Domains\Salas\Services;
+namespace App\Domains\Laboratorios\Services;
 
 
-use App\Domains\Maquina\Repositories\MaquinaRepository;
-
-use App\Domains\Salas\Validators\SalaValidator;
-use App\Domains\Salas\Repositories\SalaRepository;
+use App\Domains\Laboratorios\Repositories\LaboratorioRepository;
+use App\Domains\Laboratorios\Validators\LaboratorioValidator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Prettus\Validator\Contracts\ValidatorInterface;
 
-class SalaService
+class LaboratorioService
 {
 
     private $repository;
@@ -22,11 +20,11 @@ class SalaService
     private $validator;
 
     /**
-     * SalaService constructor.
-     * @param SalaRepository $repository
-     * @param SalaValidator $validator
+     * LaboratorioService constructor.
+     * @param LaboratorioRepository $repository
+     * @param LaboratorioValidator $validator
      */
-    public function __construct(SalaRepository $repository, SalaValidator $validator)
+    public function __construct(LaboratorioRepository $repository, LaboratorioValidator $validator)
     {
         $this->repository = $repository;
         $this->validator = $validator;

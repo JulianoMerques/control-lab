@@ -6,7 +6,7 @@
 namespace App\Domains\Maquina\Services;
 
 
-use App\Domains\Salas\Repositories\SalaRepository;
+use App\Domains\Laboratorios\Repositories\LaboratorioRepository;
 use App\Domains\Maquina\Repositories\MaquinaRepository;
 
 use App\Domains\Maquina\Validators\MaquinaValidator;
@@ -30,7 +30,7 @@ class MaquinaService
      * @param LaboratorioRepository $laboratorioRepository
      */
     public function __construct(MaquinaRepository $repository, MaquinaValidator $validator,
-                                SalaRepository $salaRepository
+                                LaboratorioRepository $salaRepository
                                 )
     {
         $this->repository = $repository;

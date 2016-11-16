@@ -12,10 +12,6 @@
                     {{ csrf_field() }}
                     <hr>
                     <div class="row">
-                        {{--<div class="input-field col s12 m10 l12">--}}
-                            {{--<input name="protocolo" id="protocolo" type="text" class="validate" value="{{$protocolo}}">--}}
-                            {{--<label for="protocolo">Protocolo</label>--}}
-                        {{--</div>--}}
                         <div class="input-field col s12 m10 l6">
                             <select name="laboratorios_id">
                                 <option value="">Escolha uma opção</option>
@@ -27,11 +23,6 @@
                         </div>
                         <div class="input-field col s12 m10 l6">
                             <select name="maquinas_id">
-                                <option value="">Escolha uma opção</option>
-                                {{--Devera ser alterado para trazer só as maquinas da sala selecionada--}}
-                                @foreach($maquinas as $maquina)
-                                    <option value="{{$maquina->id}}">{{$maquina->nome}}</option>
-                                @endforeach
                             </select>
                             <label>Selecione Um  Dispositivo</label>
                         </div>
@@ -75,20 +66,25 @@
     </div>
 @endsection
 @section('script')
-    {{--<script type="text/javascript">--}}
-        {{--$(document).ready(function(){--}}
-            {{--$('select[name=laboratorios_id]').change(function () {--}}
-                {{--var salas_id = $(this).val();--}}
-            {{--alert(salas_id);--}}
+    <script>
+//        $(document).ready(function(){
+            $('select[name=maquinas_id]').html('').append('<option value="">  Selecione uma Sala...  </option>');
 
-                {{--$('select[name=maquinas_id]').html('').append('<option value="">  Carregando...  </option>');--}}
-                {{--$.get('/maquinas/' + salas_id, function (maquinas) {--}}
-                    {{--$('select[name=maquinas_id]').empty();--}}
-                    {{--$.each(maquinas, function (key, value) {--}}
-                        {{--$('select[name=maquinas_id]').append('<option value="1"> teste</option>');--}}
-                    {{--});--}}
-                {{--});--}}
-            {{--});--}}
-        {{--});--}}
-    {{--</script>--}}
+            $('select[name=laboratorios_id]').change(function () {
+                var laboratorios_id = $(this).val();
+
+                $.get('/admin/maquinas/' + laboratorios_id, function (maquinas) {
+                    $('select[name=maquinas_id]').html('').empty();
+
+                    $('select[name=maquinas_id]').html('').append('<option value="">Escolha uma opção</option>');
+                    $.each(maquinas, function (key, value) {
+                        $('select[name=maquinas_id]').append('<option value=' + value.id + '>' + value.nome + '</option>');
+                        $('select').material_select();
+                    });
+                });
+
+            });
+//        });
+
+    </script>
 @endsection

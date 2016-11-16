@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Domains\Salas\Entities;
+namespace App\Domains\Laboratorios\Entities;
 
 use App\Domains\Maquina\Entities\Maquina;
 use App\Domains\Pedido\Entities\Pedido;
 use Illuminate\Database\Eloquent\Model;
 
-class Sala extends Model
+class Laboratorios extends Model
 {
 
     protected $table = 'laboratorios';

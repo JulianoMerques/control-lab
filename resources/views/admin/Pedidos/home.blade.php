@@ -35,14 +35,13 @@
                 <tbody>
                 @foreach($pedidos as $pedido)
                     <tr>
-                        <td>{{$pedido->id}}</td>
+                        <td>{{$pedido->protocolo}}</td>
                         <td>{{$pedido->usuario['nome']}}</td>
                         <td>{{$pedido->laboratorios['nome']}}</td>
                         <td>{{$pedido->maquinas['nome']}}</td>
                         <td>{{$pedido->problema['problema']}}</td>
                         <td>
                             @if($pedido->situacao === 0)
-                                {{--<button class="btn red">Aguardando</button>--}}
                                 <i class="material-icons red-text tooltipped" data-position="bottom" data-delay="50" data-tooltip="Aguardando">visibility_off</i>
                             @endif
                             @if($pedido->situacao === 1)

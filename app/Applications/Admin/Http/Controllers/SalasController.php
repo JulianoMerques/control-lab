@@ -1,8 +1,9 @@
 <?php
 namespace App\Applications\Admin\Http\Controllers;
 
-use App\Domains\Salas\Repositories\SalaRepository;
-use App\Domains\Salas\Services\SalaService;
+use App\Domains\Laboratorios\Repositories\LaboratorioRepository;
+use App\Domains\Laboratorios\Services\LaboratorioService;
+
 use Illuminate\Http\Request;
 
 class SalasController extends BaseController {
@@ -12,7 +13,7 @@ class SalasController extends BaseController {
 
     private $service;
 
-    public function __construct(SalaRepository $repository, SalaService $service)
+    public function __construct(LaboratorioRepository $repository, LaboratorioService $service)
     {
         $this->middleware('auth');
         $this->repository = $repository;

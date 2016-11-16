@@ -1,10 +1,11 @@
 <?php
 namespace App\Applications\Admin\Http\Controllers;
 
+use App\Domains\Laboratorios\Repositories\LaboratorioRepository;
 use App\Domains\Manutencao\Repositories\ManutencaoRepository;
 use App\Domains\Maquina\Repositories\MaquinaRepository;
 use App\Domains\Pedido\Repositories\PedidoRepository;
-use App\Domains\Salas\Repositories\SalaRepository;
+
 
 class AdminController extends BaseController {
 
@@ -20,7 +21,7 @@ class AdminController extends BaseController {
      * @param ManutencaoRepository $manutencaoRepository
      * @param MaquinaRepository $maquinaRepository
      */
-    public function __construct(SalaRepository $salaRepository, PedidoRepository $pedidoRepository,
+    public function __construct(LaboratorioRepository $salaRepository, PedidoRepository $pedidoRepository,
                                 ManutencaoRepository $manutencaoRepository,MaquinaRepository $maquinaRepository)
     {
         $this->middleware('auth');
