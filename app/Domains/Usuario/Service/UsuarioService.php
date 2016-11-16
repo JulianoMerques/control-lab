@@ -45,7 +45,7 @@ class UsuarioService
                 //Verifica Extensão do Arquivo | Permitido .txt
                 $extension = $data['img']->getClientOriginalExtension();
 
-                if($extension != 'jpg' || $extension != 'png'){
+                if($extension != 'jpg'){
                     $message = 'error|Formato de arquivo não permitido. Permitido Apenas .jpg, .png!';
                     return Redirect::route('usuarios')->withMessage($message);
                 }
@@ -75,8 +75,10 @@ class UsuarioService
                         $message = 'error|Não foi atualizar o campo imagem do usuário. Tente novamente!';
                         return Redirect::route('usuarios')->withMessage($message);
                     }
-                }else{
                     $message = 'success|Usuário Cadastrado com Secesso.';
+                    return Redirect::route('usuarios')->withMessage($message);
+                }else{
+                    $message = 'error|Imagem não enviada.';
                     return Redirect::route('usuarios')->withMessage($message);
                 }
             }

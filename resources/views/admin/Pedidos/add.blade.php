@@ -49,7 +49,7 @@
                             <textarea id="descricao"  name="descricao" class="materialize-textarea"></textarea>
                             <label for="descricao">Descrição do Problema</label>
                         </div>
-                        <input type="hidden" value="{{date("dmY"). mt_rand(1,100)}}" name="protocolo"/>
+                        <input type="hidden" value="{{date("dmY"). mt_rand(1,100)}}" name="id"/>
 
                     </div>
                     <div class="row">

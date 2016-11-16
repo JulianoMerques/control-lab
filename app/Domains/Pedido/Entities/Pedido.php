@@ -23,7 +23,7 @@ class Pedido extends Model
      */
 
     protected $fillable = [
-       'protocolo', 'usuario_id', 'laboratorios_id','maquinas_id', 'problema_id','tipo_manutencao_id','descricao', 'situacao'
+       'id', 'usuario_id', 'laboratorios_id','maquinas_id', 'problema_id','tipo_manutencao_id','descricao', 'situacao'
     ];
 
 

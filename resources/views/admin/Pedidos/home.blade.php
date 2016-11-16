@@ -35,7 +35,7 @@
                 <tbody>
                 @foreach($pedidos as $pedido)
                     <tr>
-                        <td>{{$pedido->protocolo}}</td>
+                        <td>{{$pedido->id}}</td>
                         <td>{{$pedido->usuario['nome']}}</td>
                         <td>{{$pedido->laboratorios['nome']}}</td>
                         <td>{{$pedido->maquinas['nome']}}</td>

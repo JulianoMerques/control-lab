@@ -10,7 +10,7 @@ class PedidoValidator extends LaravelValidator
     public $rules = [
         ValidatorInterface::RULE_CREATE => [
 
-            'protocolo' => ['required'],
+            'id' => ['required'],
             'usuario_id' => ['required', 'integer'],
             'laboratorios_id'=> ['required', 'integer'],
             'maquinas_id'=> ['required', 'integer'],

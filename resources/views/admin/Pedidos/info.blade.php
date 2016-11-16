@@ -60,7 +60,6 @@
 
 
     <div class="col s12 m7 l12">
-        <h2 class="header">Horizontal Card</h2>
         <div class="card horizontal">
             <div class="card-image center-align">
                 <img src="{!! asset('app/logo3.png') !!}">
@@ -88,14 +87,16 @@
                         @endif
 
                     </p><br>
+                    @if($pedidos->situacao === 2)
+                        <p>Manutenção realizada em: {{$pedidos->updated_at}}</p><br>
+                    @endif
+
                 </div>
                 @if($pedidos->situacao === 1)
-
                     @if(\Illuminate\Support\Facades\Auth::user()->tipo_user_id === 1 || \Illuminate\Support\Facades\Auth::user()->tipo_user_id === 3)
                         <div class="card-action center-align ">
                             <div class="col s12 m12 l12">
                                 <a href="{{route('manutencao.add', $pedidos->id)}}">
-                                    {{--                                <a href="{{route('manutencao.add')}}">--}}
                                     <i class="material-icons green-text tooltipped" data-position="bottom" data-delay="50" data-tooltip="Resolvido">done</i></a>
                             </div>
                             <br>
@@ -104,22 +105,9 @@
                 @endif
             </div>
                 </div>
-        @if($pedidos->situacao === 1)
 
-            @if(\Illuminate\Support\Facades\Auth::user()->tipo_user_id === 1 || \Illuminate\Support\Facades\Auth::user()->tipo_user_id === 3)
-                <div class="card-action center-align ">
-                    <div class="col s12 m12 l12">
-                        <a href="{{route('manutencao.add', $pedidos->id)}}">
-                            {{--                                <a href="{{route('manutencao.add')}}">--}}
-                            <i class="material-icons green-text tooltipped" data-position="bottom" data-delay="50" data-tooltip="Resolvido">done</i></a>
-                    </div>
-                    <br>
-                </div>
-            @endif
-        @endif
             </div>
-        </div>
-    </div>
+
     </div>
 
 @endsection
