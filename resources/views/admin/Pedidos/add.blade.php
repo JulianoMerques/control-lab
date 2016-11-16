@@ -63,10 +63,6 @@
                     </div>
                     <div class="row">
                         <div class="col s12">
-                            {{--<input type="submit" name="enviar" value="Enviar" class="btn btn-primary pull-right green">--}}
-                            {{--<i class="material-icons">send</i>--}}
-                            {{--</input>--}}
-
                             <button class="btn waves-effect waves-light green pull-right" type="submit" name="Salvar">Salvar
                                 <i class="material-icons right">send</i>
                             </button>
@@ -77,4 +73,22 @@
         </div>
 
     </div>
+@endsection
+@section('script')
+    {{--<script type="text/javascript">--}}
+        {{--$(document).ready(function(){--}}
+            {{--$('select[name=laboratorios_id]').change(function () {--}}
+                {{--var salas_id = $(this).val();--}}
+            {{--alert(salas_id);--}}
+
+                {{--$('select[name=maquinas_id]').html('').append('<option value="">  Carregando...  </option>');--}}
+                {{--$.get('/maquinas/' + salas_id, function (maquinas) {--}}
+                    {{--$('select[name=maquinas_id]').empty();--}}
+                    {{--$.each(maquinas, function (key, value) {--}}
+                        {{--$('select[name=maquinas_id]').append('<option value="1"> teste</option>');--}}
+                    {{--});--}}
+                {{--});--}}
+            {{--});--}}
+        {{--});--}}
+    {{--</script>--}}
 @endsection

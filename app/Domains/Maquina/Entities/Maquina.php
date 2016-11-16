@@ -3,6 +3,7 @@
 namespace App\Domains\Maquina\Entities;
 
 use App\Domains\Pedido\Entities\Pedido;
+use App\Domains\Salas\Entities\Sala;
 use Illuminate\Database\Eloquent\Model;
 
 class Maquina extends Model
@@ -21,6 +22,9 @@ class Maquina extends Model
 
     public function pedido(){
         return $this->hasMany(Pedido::class);
+    }
+    public function laboratorios(){
+        return $this->belongsTo(Sala::class);
     }
 
 }

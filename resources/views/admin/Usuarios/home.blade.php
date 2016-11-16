@@ -10,10 +10,10 @@
                 <h4>Lista de Usuários</h4>
             </div>
 
-            <div class="right">
-                <a href="{{ route('usuarios.add') }}" class="waves-effect waves-light btn green">
-                    <span><i class="material-icons">library_add</i></span>Adicionar Usuário</a>
-            </div>
+            {{--<div class="right">--}}
+                {{--<a href="{{ route('usuarios.add') }}" class="waves-effect waves-light btn green">--}}
+                    {{--<span><i class="material-icons">library_add</i></span>Adicionar Usuário</a>--}}
+            {{--</div>--}}
         </div>
     </div>
 
@@ -48,6 +48,11 @@
             </table>
 
         </div>
+        <div class="fixed-action-btn">
+            <a href="{{route('usuarios.add')}}" class="btn-floating btn-large waves-effect waves-light green tooltipped" data-position="top" data-delay="50" data-tooltip="Cadastrar">
+                <i class="material-icons">add</i>
+            </a>
+        </div>
     </div>
 
 @endsection
@@ -75,6 +80,10 @@
 @section('script')
     <script>
         $(document).ready(function(){
+
+            var message = document.getElementById('message').value;
+            Materialize.toast(message, 4000)
+
             $('a[rel=delete-usuario]').click( function () {
                 //VARIAVEIS
                 var dataNome = $(this).data('nome');
@@ -103,6 +112,8 @@
             $('button[rel=close]').on('click',function () {
                 $('#confirm-delete').closeModal();
             });
+
+
         });
 
     </script>

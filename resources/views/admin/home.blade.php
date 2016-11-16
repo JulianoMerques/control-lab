@@ -7,9 +7,10 @@
                 <div class="col s12 m12 l12">
                     <div class="col s12 m12 l12">
                         {{--Logo do sistema--}}
-                        {{--<strong>Bem Vindo {{ Auth::user()->nome }}</strong>--}}
-                        <h3>logo</h3>
-                        {{--<img src="app/user/img/2.jpg"/>--}}
+                        {{--<h3>logo</h3>--}}
+                        {{--<img src="../layouts/Default/logo2.png" alt="Control-Lab V 1.1">--}}
+
+                        <img src="{!! asset('app/logo3.png') !!}" alt="Control-Lab V 1.1">
                     </div>
                 </div>
             </div>

@@ -26,7 +26,7 @@
                 <li>
                     <a class="dropdown-button" href="#!" data-activates="dropdown">
                         <div class="chip #0288d1 light-blue darken-2">
-                            <img src="{{\Illuminate\Support\Facades\Auth::user()->img}}" alt="Contact Person">
+                            <img src="{{\Illuminate\Support\Facades\Auth::user()->img}}" alt="Imagem do Usuário">
                             {{\Illuminate\Support\Facades\Auth::user()->nome}}
                         </div>
                         <i class="material-icons right">arrow_drop_down</i>
@@ -35,7 +35,8 @@
             @endif
         </ul>
 
-        <a href="{{route('dashboard')}}" class="brand-logo">Control-Lab V 1.1</a>
+        {{--<a href="{{route('dashboard')}}" class="brand-logo">Control-Lab V 1.1</a>--}}
+        <a href="{{route('dashboard')}}" class="brand-logo"><img src="{!! asset('app/logo3.png') !!}" width="50%" alt="Control-Lab V 1.1"> </a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
         {{------------------------------estrutura de menus------------------------------------------}}
@@ -54,7 +55,6 @@
         <!-- Dropdown Structure Manutenção -->
         <ul id="dropdownMan" class="dropdown-content">
             <li><a href="{{route('manutencao')}}">Listar</a></li>
-            <li><a href="#!">Cadastrar</a></li>
         </ul>
 
         <!-- Dropdown Structure Pedidos -->
@@ -81,7 +81,7 @@
             <li><a class="dropdown-button" href="#!" data-activates="dropdownLab">Salas<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a class="dropdown-button" href="#!" data-activates="dropdownMaq">Dispositivos<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a class="dropdown-button" href="#!" data-activates="dropdownPed">Pedidos<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li><a class="dropdown-button" href="#!" data-activates="dropdownMan">Manutenção<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a  href="{{route('manutencao')}}" >Manutenção</a></li>
             <li><a class="dropdown-button" href="#!" data-activates="dropdownUser">Usuários<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a class="dropdown-button" href="#!" data-activates="dropdownRel">Relatórios<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
@@ -104,7 +104,6 @@
         {{--------------------------------------------------------------------------------------------------}}
         <ul id="dropManMobile" class="dropdown-content">
             <li><a href="{{route('manutencao')}}">Listar</a></li>
-            <li><a href="#!">Cadastrar</a></li>
         </ul>
         {{--------------------------------------------------------------------------------------------------}}
         <ul id="dropRelMobile" class="dropdown-content">
@@ -133,12 +132,12 @@
 
         {{-----------------------------fim estrutura de menus moblile----------------------------------------}}
         <ul class="side-nav" id="mobile-demo">
-            <li><a class="dropdown-button" href="#!" data-activates="dropLabMobile">Salas</a></li>
-            <li><a class="dropdown-button" href="#!" data-activates="dropMaqMobile">Dispositivos</a></li>
-            <li><a class="dropdown-button" href="#!" data-activates="dropPedMobile">Pedidos</a></li>
-            <li><a class="dropdown-button" href="#!" data-activates="dropManMobile">Manutenção</a></li>
-            <li><a class="dropdown-button" href="#!" data-activates="dropMaqMobile">Usuários</a></li>
-            <li><a class="dropdown-button" href="#!" data-activates="dropdownRel">Relatórios</a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropLabMobile">Salas<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropMaqMobile">Dispositivos<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropPedMobile">Pedidos<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a href="{{route('manutencao')}}">Manutenção</a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropMaqMobile">Usuários<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropdownRel">Relatórios<i class="material-icons right">arrow_drop_down</i></a></li>
             <li>
                 <a class="dropdown-button" href="#!" data-activates="dropMobile">
                     <div class="chip white">

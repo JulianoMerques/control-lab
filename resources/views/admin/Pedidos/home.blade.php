@@ -64,6 +64,11 @@
             </table>
 
         </div>
+        <div class="fixed-action-btn">
+            <a href="{{route('pedidos.add')}}" class="btn-floating btn-large waves-effect waves-light green tooltipped" data-position="top" data-delay="50" data-tooltip="Cadastrar">
+                <i class="material-icons">add</i>
+            </a>
+        </div>
     </div>
 
 @endsection
@@ -71,6 +76,10 @@
 @section('script')
     <script>
         $(document).ready(function(){
+
+            var message = document.getElementById('message').value;
+            Materialize.toast(message, 4000)
+
             $('button[rel=delete-usuario]').click( function () {
                 //VARIAVEIS
                 var dataNome = $(this).data('nome');
