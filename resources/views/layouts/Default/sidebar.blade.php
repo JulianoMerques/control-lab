@@ -137,7 +137,7 @@
             <li><a class="dropdown-button" href="#!" data-activates="dropPedMobile">Pedidos<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a href="{{route('manutencao')}}">Manutenção</a></li>
             <li><a class="dropdown-button" href="#!" data-activates="dropMaqMobile">Usuários<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li><a class="dropdown-button" href="#!" data-activates="dropdownRel">Relatórios<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropRelMobile">Relatórios<i class="material-icons right">arrow_drop_down</i></a></li>
             <li>
                 <a class="dropdown-button" href="#!" data-activates="dropMobile">
                     <div class="chip white">

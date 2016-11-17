@@ -32,7 +32,7 @@ class Manutencao extends Model
         return $this->belongsTo(Turno::class);
     }
     public function pedido(){
-        return $this->hasMany(Pedido::class);
+        return $this->belongsTo(Pedido::class);
     }
     public function problemas(){
         return $this->belongsTo(Problema::class);
