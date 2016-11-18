@@ -9,6 +9,7 @@ use App\Domains\Turno\Repositories\TurnoRepository;
 use App\Domains\Usuario\Repositories\UsuarioRepository;
 use App\Domains\Usuario\Service\UsuarioService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 
 class UsuariosController extends BaseController {
 
@@ -60,6 +61,12 @@ class UsuariosController extends BaseController {
     public function update(Request $request, $id){
         return $this->service->update($request->except('_token', 'editar','id'),$id);
 
+    }
+    public function getUsuarios()
+    {
+        $usuarios = $this->repository->all();
+//
+        return Response::json($usuarios);
     }
 
     public function destroy($id){

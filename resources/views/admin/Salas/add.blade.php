@@ -33,7 +33,9 @@
                     <hr>
                     <div class="row">
                         <div class="col s12">
-                            <input type="submit" name="enviar" value="Enviar" class="btn btn-primary pull-right green">
+                            <button class="btn waves-effect waves-light green pull-right" type="submit" name="Salvar">Salvar
+                                <i class="material-icons right">send</i>
+                            </button>
                         </div>
                     </div>
                 </form>

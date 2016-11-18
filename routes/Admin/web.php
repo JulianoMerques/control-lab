@@ -28,6 +28,7 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('{id}/edit', ['as' => 'maquinas.edit', 'uses' => 'MaquinasController@edit']);
         Route::post('{id}/edit', ['as' => 'maquinas.update', 'uses' => 'MaquinasController@update']);
         Route::delete('{id}', ['as' => 'maquinas.delete', 'uses' => 'MaquinasController@destroy']);
+        Route::get('relatorio', ['as' => 'maquinas.get', 'uses' => 'MaquinasController@teste']);
     });
 
     //SALAS
@@ -39,6 +40,7 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('{id}/edit', ['as' => 'salas.edit', 'uses' => 'SalasController@edit']);
         Route::post('{id}/edit', ['as' => 'salas.update', 'uses' => 'SalasController@update']);
         Route::delete('{id}', ['as' => 'salas.delete', 'uses' => 'SalasController@destroy']);
+        Route::get('relatorio', ['as' => 'salas.get', 'uses' => 'SalasController@getSalas']);
     });
 
     //MANUTENÇÃO
@@ -50,6 +52,7 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('{id}/edit', ['as' => 'manutencao.edit', 'uses' => 'ManutencaoController@edit']);
         Route::post('{id}/edit', ['as' => 'manutencao.update', 'uses' => 'ManutencaoController@update']);
         Route::delete('{id}', ['as' => 'manutencao.delete', 'uses' => 'ManutencaoController@destroy']);
+        Route::get('relatorio', ['as' => 'manutencao.get', 'uses' => 'ManutencaoController@getManutencao']);
     });
 
     //PEDIDOS
@@ -72,6 +75,36 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('{id}/edit', ['as' => 'usuarios.edit', 'uses' => 'UsuariosController@edit']);
         Route::post('{id}/edit', ['as' => 'usuarios.update', 'uses' => 'UsuariosController@update']);
         Route::delete('{id}', ['as' => 'usuarios.delete', 'uses' => 'UsuariosController@destroy']);
+        Route::get('relatorio', ['as' => 'usuarios.get', 'uses' => 'UsuariosController@getUsuarios']);
+    });
+    //PROBLEMAS
+    Route::group(['prefix' => 'problemas'], function() {
+        Route::get('/', ['as' => 'problemas', 'uses' => 'ProblemasController@index']);
+        Route::get('add', ['as' => 'problemas.add', 'uses' => 'ProblemasController@store']);
+        Route::post('add', ['as' => 'problemas.create', 'uses' => 'ProblemasController@create']);
+        Route::get('{id}/info', ['as' => 'problemas.show', 'uses' => 'ProblemasController@show']);
+        Route::get('{id}/edit', ['as' => 'problemas.edit', 'uses' => 'ProblemasController@edit']);
+        Route::post('{id}/edit', ['as' => 'problemas.update', 'uses' => 'ProblemasController@update']);
+        Route::delete('{id}', ['as' => 'problemas.delete', 'uses' => 'ProblemasController@destroy']);
+        Route::get('relatorio', ['as' => 'problemas.get', 'uses' => 'ProblemasController@getProblemas']);
+    });
+
+    //RELATÓRIOS
+    Route::group(['prefix' => 'relatorios'], function() {
+        Route::get('dispositivos', ['as' => 'relatorios.dispositivos', 'uses' => 'RelatoriosController@indexDispositivos']);
+        Route::post('dispositivos/gerar', ['as' => 'dispositivos.gerar', 'uses' => 'RelatoriosController@relDipositivos']);
+
+        Route::get('salas/gerar', ['as' => 'salas.gerar', 'uses' => 'RelatoriosController@relSalas']);
+
+        Route::get('usuarios/gerar', ['as' => 'usuarios.gerar', 'uses' => 'RelatoriosController@relUsuarios']);
+
+//        Route::get('manutencoes', ['as' => 'relatorios.manutencoes', 'uses' => 'RelatoriosController@indexManutencoes']);
+        Route::get('manutencoes/gerar', ['as' => 'manutencoes.gerar', 'uses' => 'RelatoriosController@relManutencao']);
+
+        Route::get('pedidos', ['as' => 'relatorios.pedidos', 'uses' => 'RelatoriosController@indexPedidos']);
+        Route::post('pedidos/gerar', ['as' => 'pedidos.gerar', 'uses' => 'RelatoriosController@relPedidos']);
+
+        Route::get('maquinas', ['as' => 'maquinas.get', 'uses' => 'MaquinasController@teste']);
     });
 });
 

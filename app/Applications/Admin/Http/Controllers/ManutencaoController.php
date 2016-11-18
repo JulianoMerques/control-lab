@@ -18,6 +18,7 @@ use App\Domains\Usuario\Repositories\UsuarioRepository;
 use App\Domains\Usuario\Service\UsuarioService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Response;
 
 class ManutencaoController extends BaseController {
 
@@ -37,22 +38,23 @@ class ManutencaoController extends BaseController {
     /**
      * @var PedidoRepository
      */
-    private $pedidoRepository;
+    private $manutencaoRepository;
 
     public function __construct(ManutencaoRepository $repository,ManutencaoService $service,
-                                TurnoRepository $turnoRepository)
+                                TurnoRepository $turnoRepository, TipoManutencaoRepository $manutencaoRepository)
     {
         $this->middleware('auth');
         $this->repository = $repository;
         $this->service = $service;
 
         $this->turnoRepository = $turnoRepository;
+        $this->manutencaoRepository = $manutencaoRepository;
     }
 
     public function index()
     {
-            $manutencoes =$this->repository->all();
-            return $this->view('Manutencao.home', compact('manutencoes'));
+        $manutencoes =$this->repository->all();
+        return $this->view('Manutencao.home', compact('manutencoes'));
     }
 
     public function store($pedidos)
@@ -86,4 +88,12 @@ class ManutencaoController extends BaseController {
 //    public function destroy($id){
 //        return $this->service->destroy($id);
 //    }
+
+
+
+    public function getManutencao(){
+        $manutencao = $this->manutencaoRepository->all();
+        return Response::json($manutencao);
+
+    }
 }

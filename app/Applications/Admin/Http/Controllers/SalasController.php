@@ -5,6 +5,7 @@ use App\Domains\Laboratorios\Repositories\LaboratorioRepository;
 use App\Domains\Laboratorios\Services\LaboratorioService;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 
 class SalasController extends BaseController {
 
@@ -53,4 +54,12 @@ class SalasController extends BaseController {
     public function destroy($id){
         return $this->service->destroy($id);
     }
+
+
+    public function getSalas(){
+        $salas = $this->repository->all();
+//
+        return Response::json($salas);
+    }
+
 }

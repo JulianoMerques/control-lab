@@ -46,9 +46,11 @@ class MaquinasController extends BaseController {
     $laboratorios = $this->salasRepository->all();
         return $this->view('Dispositivos.add', compact('laboratorios'));
     }
+
     public function create(Request $request){
         return $this->service->store($request->except('_token', 'enviar'));
     }
+
     public function show($id){
 //        return $this->service->show($id);
         $maquina = $this->repository->find($id);
@@ -64,12 +66,22 @@ class MaquinasController extends BaseController {
     public function update(Request $request, $id){
         return $this->service->update($request->except('_token', 'editar','id'),$id);
     }
+
+    public function teste()
+    {
+        $maquinas = $this->repository->all();
+        return Response::json($maquinas);
+    }
+
     public function getMaquinas($id)
     {
+
         $sala = $this->salasRepository->find($id);
         $maquinas = $sala->maquinas()->get(['id', 'nome']);
         return Response::json($maquinas);
     }
+
+
 
     public function destroy($id){
         return $this->service->destroy($id);

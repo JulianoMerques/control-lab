@@ -69,11 +69,11 @@
         </ul>
         <!-- Dropdown Structure Retatório -->
         <ul id="dropdownRel" class="dropdown-content">
-            <li><a href="#!">Dispositivos</a></li>
-            <li><a href="#!">Salas</a></li>
-            <li><a href="#!">Manutenção</a></li>
-            <li><a href="#!">Pedidos</a></li>
-            <li><a href="#!">Usuários</a></li>
+            <li><a href="{{route('relatorios.dispositivos')}}">Dispositivos</a></li>
+            <li><a href="{{route('salas.gerar')}}">Salas</a></li>
+            <li><a href="{{route('manutencoes.gerar')}}">Manutenção</a></li>
+            <li><a href="{{route('relatorios.pedidos')}}">Pedidos</a></li>
+            <li><a href="{{route('usuarios.gerar')}}">Usuários</a></li>
         </ul>
         {{------------------------------fim estrutura de menus------------------------------------------}}
 

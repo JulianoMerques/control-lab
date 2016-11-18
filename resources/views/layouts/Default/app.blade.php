@@ -67,7 +67,7 @@
 
 @yield('script')
 
-<script src="/public/js/materialize.js"></script>
+{{--<script src="/public/js/materialize.js"></script>--}}
 
 
 

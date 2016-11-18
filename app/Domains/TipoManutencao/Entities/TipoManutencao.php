@@ -2,6 +2,7 @@
 
 namespace App\Domains\TipoManutencao\Entities;
 
+use App\Domains\Pedido\Entities\Pedido;
 use Illuminate\Database\Eloquent\Model;
 
 class TipoManutencao extends Model
