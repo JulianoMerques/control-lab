@@ -31,7 +31,7 @@ class MaquinaService
      */
     public function __construct(MaquinaRepository $repository, MaquinaValidator $validator,
                                 LaboratorioRepository $salaRepository
-                                )
+    )
     {
         $this->repository = $repository;
         $this->validator = $validator;
@@ -45,8 +45,13 @@ class MaquinaService
      */
     public function store($data)
     {
-
+//        dd($data);
         try {
+            $sala = $this->salaRepository->find($data['laboratorios_id']);
+            if (count($sala) == $sala['capacidade']){
+                $message = 'error|Sala com capacidade máxima. Tente outra sala';
+                return Redirect::route('maquinas.add')->withMessage($message);
+            }
 //            Validação de dados
             $this->validator->with( $data )->passesOrFail( ValidatorInterface::RULE_CREATE );
 
@@ -99,8 +104,8 @@ class MaquinaService
             $message = 'error|Erro ao excluir Dispositivo! Tente novamente!';
             return Redirect::route('maquinas')->withMessage($message);
         }
-            $message = 'success|Dispositivo excluído com sucesso!';
-            return Redirect::route('maquinas')->withMessage($message);
+        $message = 'success|Dispositivo excluído com sucesso!';
+        return Redirect::route('maquinas')->withMessage($message);
 
     }
 

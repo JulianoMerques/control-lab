@@ -2,7 +2,7 @@
 
 @section('content')
     @if(Session::has('message'))
-        {{ \App\Core\Helpers\AppHelper::showMessage(Session::get('message')) }}
+        {{ \App\Core\Helpers\AppHelper::showAlert(Session::get('message')) }}
     @endif
     <div class="container ">
         <div class="row col s12 m12 l12">
@@ -59,9 +59,13 @@
         </div>
 
     </div>
-
-
-
-
+@endsection
+@section('script')
+    <script>
+        $(document).ready(function(){
+            var message = document.getElementById('message').value;
+            Materialize.toast(message, 4000)
+        });
+    </script>
 @endsection
 
