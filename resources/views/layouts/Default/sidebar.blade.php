@@ -40,7 +40,7 @@
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
         {{------------------------------estrutura de menus------------------------------------------}}
-        <!-- Dropdown Structure Dispositivos -->
+    <!-- Dropdown Structure Dispositivos -->
         <ul id="dropdownMaq" class="dropdown-content">
             <li><a href="{{route('maquinas')}}">Listar</a></li>
             <li><a href="{{route('maquinas.add')}}">Cadastrar</a></li>
@@ -78,12 +78,16 @@
         {{------------------------------fim estrutura de menus------------------------------------------}}
 
         <ul class="right hide-on-med-and-down">
-            <li><a class="dropdown-button" href="#!" data-activates="dropdownLab">Salas<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li><a class="dropdown-button" href="#!" data-activates="dropdownMaq">Dispositivos<i class="material-icons right">arrow_drop_down</i></a></li>
+            @if(\Illuminate\Support\Facades\Auth::user()->isAdm())
+                <li><a class="dropdown-button" href="#!" data-activates="dropdownLab">Salas<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdownMaq">Dispositivos<i class="material-icons right">arrow_drop_down</i></a></li>
+            @endif
             <li><a class="dropdown-button" href="#!" data-activates="dropdownPed">Pedidos<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li><a  href="{{route('manutencao')}}" >Manutenção</a></li>
-            <li><a class="dropdown-button" href="#!" data-activates="dropdownUser">Usuários<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li><a class="dropdown-button" href="#!" data-activates="dropdownRel">Relatórios<i class="material-icons right">arrow_drop_down</i></a></li>
+            @if(\Illuminate\Support\Facades\Auth::user()->isAdm())
+                <li><a  href="{{route('manutencao')}}" >Manutenção</a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdownUser">Usuários<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdownRel">Relatórios<i class="material-icons right">arrow_drop_down</i></a></li>
+            @endif
         </ul>
 
         {{------------------------------estrutura de menus moblile------------------------------------------}}
@@ -132,12 +136,16 @@
 
         {{-----------------------------fim estrutura de menus moblile----------------------------------------}}
         <ul class="side-nav" id="mobile-demo">
-            <li><a class="dropdown-button" href="#!" data-activates="dropLabMobile">Salas<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li><a class="dropdown-button" href="#!" data-activates="dropMaqMobile">Dispositivos<i class="material-icons right">arrow_drop_down</i></a></li>
+            @if(\Illuminate\Support\Facades\Auth::user()->isAdm())
+                <li><a class="dropdown-button" href="#!" data-activates="dropLabMobile">Salas<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropMaqMobile">Dispositivos<i class="material-icons right">arrow_drop_down</i></a></li>
+            @endif
             <li><a class="dropdown-button" href="#!" data-activates="dropPedMobile">Pedidos<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li><a href="{{route('manutencao')}}">Manutenção</a></li>
-            <li><a class="dropdown-button" href="#!" data-activates="dropMaqMobile">Usuários<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li><a class="dropdown-button" href="#!" data-activates="dropRelMobile">Relatórios<i class="material-icons right">arrow_drop_down</i></a></li>
+            @if(\Illuminate\Support\Facades\Auth::user()->isAdm())
+                <li><a href="{{route('manutencao')}}">Manutenção</a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropMaqMobile">Usuários<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropRelMobile">Relatórios<i class="material-icons right">arrow_drop_down</i></a></li>
+            @endif
             <li>
                 <a class="dropdown-button" href="#!" data-activates="dropMobile">
                     <div class="chip white">

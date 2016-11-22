@@ -6,18 +6,10 @@ namespace App\Applications\Admin\Http\Controllers;
 
 use App\Domains\Manutencao\Repositories\ManutencaoRepository;
 use App\Domains\Manutencao\Services\ManutencaoService;
-use App\Domains\Maquina\Repositories\MaquinaRepository;
 use App\Domains\Pedido\Repositories\PedidoRepository;
-use App\Domains\Pedido\Services\PedidoService;
-use App\Domains\Problema\Repositories\ProblemaRepository;
-use App\Domains\Salas\Repositories\SalaRepository;
 use App\Domains\TipoManutencao\Repositories\TipoManutencaoRepository;
-use App\Domains\TipoUser\Repositories\TipoRepository;
 use App\Domains\Turno\Repositories\TurnoRepository;
-use App\Domains\Usuario\Repositories\UsuarioRepository;
-use App\Domains\Usuario\Service\UsuarioService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
 
 class ManutencaoController extends BaseController {
@@ -44,6 +36,8 @@ class ManutencaoController extends BaseController {
                                 TurnoRepository $turnoRepository, TipoManutencaoRepository $manutencaoRepository)
     {
         $this->middleware('auth');
+        $this->middleware('check.nivelAccess');
+//        $this->middleware('check.nivelAcess');
         $this->repository = $repository;
         $this->service = $service;
 

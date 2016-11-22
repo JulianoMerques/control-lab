@@ -21,7 +21,7 @@
                         </div>
                         <div class="input-field col s6">
                             <select name="laboratorio_id">
-                                <option value="">Escolha uma opção</option>
+                                <option value="{{$maquina->laboratorios_id}}">{{$maquina->laboratorios['nome']}}</option>
                                 @foreach($laboratorios as $laboratorio)
                                     <option value="{{$laboratorio->id}}">{{$laboratorio->nome}}</option>
                                 @endforeach

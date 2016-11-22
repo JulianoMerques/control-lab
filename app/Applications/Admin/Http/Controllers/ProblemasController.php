@@ -18,6 +18,7 @@ class ProblemasController extends BaseController {
     public function __construct(ProblemaRepository $repository)
     {
         $this->middleware('auth');
+        $this->middleware('check.nivelAccess');
         $this->repository = $repository;
 //        $this->service = $service;
     }

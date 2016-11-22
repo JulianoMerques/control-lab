@@ -25,6 +25,7 @@ class UsuariosController extends BaseController {
                                 TurnoRepository $turnoRepository, TipoRepository $tipoRepository)
     {
         $this->middleware('auth');
+        $this->middleware('check.nivelAccess');
         $this->repository = $repository;
         $this->service = $service;
         $this->turnoRepository = $turnoRepository;

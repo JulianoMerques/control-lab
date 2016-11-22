@@ -73,10 +73,10 @@
             $('select[name=laboratorios_id]').change(function () {
                 var laboratorios_id = $(this).val();
 
-                $.get('/admin/maquinas/' + laboratorios_id, function (maquinas) {
+                $.get('/admin/pedidos/' + laboratorios_id, function (maquinas) {
                     $('select[name=maquinas_id]').html('').empty();
 
-                    $('select[name=maquinas_id]').html('').append('<option value="">Escolha uma opção</option>');
+                    $('select[name=maquinas_id]').html('').append('<option value="">Escolha o Dispositivo </option>');
                     $.each(maquinas, function (key, value) {
                         $('select[name=maquinas_id]').append('<option value=' + value.id + '>' + value.nome + '</option>');
                         $('select').material_select();

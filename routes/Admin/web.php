@@ -23,12 +23,11 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/', ['as' => 'maquinas', 'uses' => 'MaquinasController@index']);
         Route::get('add', ['as' => 'maquinas.add', 'uses' => 'MaquinasController@store']);
         Route::post('add', ['as' => 'maquinas.create', 'uses' => 'MaquinasController@create']);
-        Route::get('{id}', ['as' => 'maquinas.laboratorios', 'uses' => 'MaquinasController@getMaquinas']);
+//        Route::get('{id}', ['as' => 'maquinas.laboratorios', 'uses' => 'MaquinasController@getMaquinas']);
         Route::get('{id}/info', ['as' => 'maquinas.show', 'uses' => 'MaquinasController@show']);
         Route::get('{id}/edit', ['as' => 'maquinas.edit', 'uses' => 'MaquinasController@edit']);
         Route::post('{id}/edit', ['as' => 'maquinas.update', 'uses' => 'MaquinasController@update']);
         Route::delete('{id}', ['as' => 'maquinas.delete', 'uses' => 'MaquinasController@destroy']);
-        Route::get('relatorio', ['as' => 'maquinas.get', 'uses' => 'MaquinasController@teste']);
     });
 
     //SALAS
@@ -64,6 +63,7 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('{id}/edit', ['as' => 'pedidos.edit', 'uses' => 'PedidosController@edit']);
         Route::post('{id}/edit', ['as' => 'pedidos.update', 'uses' => 'PedidosController@update']);
         Route::delete('{id}', ['as' => 'pedidos.delete', 'uses' => 'PedidosController@destroy']);
+        Route::get('{id}', ['as' => 'pedidos.laboratorios', 'uses' => 'MaquinasController@getMaquinas']);
     });
 
     //USUARIOS

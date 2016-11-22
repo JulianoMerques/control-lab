@@ -25,6 +25,7 @@ class MaquinasController extends BaseController {
                                  LaboratorioRepository $salasRepository)
     {
         $this->middleware('auth');
+        $this->middleware('check.nivelAccess');
         $this->repository = $repository;
         $this->service = $service;
         $this->salasRepository = $salasRepository;
@@ -59,6 +60,7 @@ class MaquinasController extends BaseController {
 
     public function edit($id){
         $maquina = $this->repository->find($id);
+        $lab = $maquina->laboratorios['id'];
         $laboratorios = $this->salasRepository->all();
         return $this->view('Dispositivos.edit', compact('maquina','laboratorios'));
     }
@@ -75,7 +77,6 @@ class MaquinasController extends BaseController {
 
     public function getMaquinas($id)
     {
-
         $sala = $this->salasRepository->find($id);
         $maquinas = $sala->maquinas()->get(['id', 'nome']);
         return Response::json($maquinas);

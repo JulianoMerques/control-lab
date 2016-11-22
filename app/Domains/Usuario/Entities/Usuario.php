@@ -34,4 +34,26 @@ class Usuario extends Authenticatable
     public function manutencao(){
         return $this->hasMany(Manutencao::class);
     }
+
+
+    public function isAdm()
+    {
+        $nivel_access = Usuario::getAttribute('tipo_user_id');
+
+        if($nivel_access === 1){
+            return true;
+        }
+        if($nivel_access === 2){
+            return true;
+        }
+
+        return false;
+    }
+
+//    public function isEstag(){
+//        $nivel_access = Usuario::getAttribute('tipo_user_id');
+//        if($nivel_access === 2){
+//            return true;
+//        }
+//    }
 }

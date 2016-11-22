@@ -17,6 +17,7 @@ class SalasController extends BaseController {
     public function __construct(LaboratorioRepository $repository, LaboratorioService $service)
     {
         $this->middleware('auth');
+        $this->middleware('check.nivelAccess');
         $this->repository = $repository;
         $this->service = $service;
     }

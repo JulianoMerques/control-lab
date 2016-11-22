@@ -41,6 +41,7 @@ class PedidosController extends BaseController {
                                 MaquinaRepository $maquinaRepository, ProblemaRepository $problemaRepository)
     {
         $this->middleware('auth');
+        $this->middleware('check.nivelAccess');
         $this->repository = $repository;
         $this->service = $service;
         $this->tipoRepository = $tipoRepository;
@@ -52,7 +53,7 @@ class PedidosController extends BaseController {
 
     public function index()
     {
-        if (Auth::user()->tipo_user_id === 1 || Auth::user()->tipo_user_id === 3){
+        if (Auth::user()->tipo_user_id === 1 || Auth::user()->tipo_user_id === 2){
             $pedidos =$this->repository->all();
             return $this->view('Pedidos.home', compact('pedidos'));
         }else{
@@ -78,9 +79,12 @@ class PedidosController extends BaseController {
 
     public function show($protocolo){
         $situacao = $this->repository->find($protocolo);
-        if ($situacao['situacao'] === 0){
-            $this->repository->update( ['situacao' => '1'],$protocolo);
+        if (Auth::user()->isAdm()){
+            if ($situacao['situacao'] === 0){
+                $this->repository->update( ['situacao' => '1'],$protocolo);
+            }
         }
+
 
         $pedidos = $this->repository->find($protocolo);
         return $this->view('Pedidos.info', compact('pedidos'));

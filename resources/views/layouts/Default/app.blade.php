@@ -19,10 +19,12 @@
     <!-- Scripts -->
     <script>
         $( document ).ready(function(){
+
             $(".dropdown-button").dropdown();
             $(".button-collapse").sideNav();
             $('select').material_select();
             $('.tooltipped').tooltip({delay: 50});
+
         });
 
         window.Laravel = <?php echo json_encode([

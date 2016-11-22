@@ -20,7 +20,7 @@
                     <div class="row">
 
                         <div class="input-field col s12 m10 l6">
-                            <input placeholder="Mac" name="mac" id="mac" type="text" class="validate">
+                            <input placeholder="Mac" name="mac" id="mac" type="text" class="mac validate">
                             <label for="mac">Mac</label>
                         </div>
                         <div class="input-field col s12 m10 l6">
@@ -65,6 +65,9 @@
         $(document).ready(function(){
             var message = document.getElementById('message').value;
             Materialize.toast(message, 4000)
+
+
+
         });
     </script>
 @endsection

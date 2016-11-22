@@ -1,6 +1,9 @@
 @extends('layouts.Default.app')
 
 @section('content')
+    @if(Session::has('message'))
+        {{ \App\Core\Helpers\AppHelper::showAlert(Session::get('message')) }}
+    @endif
     <div class="container">
         <div class="row center-align">
             <div class="col s12 m12 l12">
@@ -20,6 +23,7 @@
             <div class="col s12 m12 l6 center-align">
                 <div class="card">
                     <div class="card-panel green">
+                        {{--<span><i class="material-icons">description</i></span><br>--}}
                         <span class="white-text">Número De Pedidos:</span><br>
                         <span class="white-text">{{$pedidos}}</span>
 
@@ -30,6 +34,7 @@
             <div class="col s12 m12 l6 center-align">
                 <div class="card">
                     <div class="card-panel #1565c0 blue darken-3">
+                        {{--<span><i class="material-icons">build</i></span><br>--}}
                         <span class="white-text">Número De Manutenções:</span><br>
                         <span class="white-text">{{$manutencoes}}</span>
                     </div>
@@ -59,4 +64,13 @@
 
         </div>
     </div>
+@endsection
+@section('script')
+    <script>
+        $(document).ready(function(){
+
+            var message = document.getElementById('message').value;
+            Materialize.toast(message, 4000)
+                   });
+    </script>
 @endsection

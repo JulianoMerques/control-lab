@@ -32,6 +32,7 @@ class RelatoriosController extends BaseController {
                                 ProblemaRepository $problemaRepository)
     {
         $this->middleware('auth');
+        $this->middleware('check.nivelAccess');
         $this->repository = $repository;
         $this->maquinaRepository = $maquinaRepository;
         $this->usuarioRepository = $usuarioRepository;

@@ -2,6 +2,7 @@
 
 namespace App\Core\Http;
 
+use App\Core\Http\Middleware\CheckNivelAccess;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -52,5 +53,6 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Core\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'check.nivelAccess' => CheckNivelAccess::class,
     ];
 }
