@@ -38,7 +38,7 @@ class MaquinasController extends BaseController {
      */
     public function index()
     {
-        $maquinas = $this->repository->all();
+        $maquinas = $this->repository->paginate(4);
         return $this->view('Dispositivos.home', compact('maquinas'));
     }
 

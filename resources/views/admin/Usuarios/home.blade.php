@@ -46,6 +46,7 @@
                 @endforeach
                 </tbody>
             </table>
+            {{$usuarios->render()}}
 
         </div>
         <div class="fixed-action-btn">

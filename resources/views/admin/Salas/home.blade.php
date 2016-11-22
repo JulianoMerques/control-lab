@@ -47,7 +47,7 @@
                 @endforeach
                 </tbody>
             </table>
-
+            {{$salas->render()}}
         </div>
         <div class="fixed-action-btn">
             <a href="{{route('salas.add')}}" class="btn-floating btn-large waves-effect waves-light green tooltipped" data-position="top" data-delay="50" data-tooltip="Cadastrar">

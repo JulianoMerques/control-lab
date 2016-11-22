@@ -47,7 +47,7 @@ class ManutencaoController extends BaseController {
 
     public function index()
     {
-        $manutencoes =$this->repository->all();
+        $manutencoes =$this->repository->paginate(5);
         return $this->view('Manutencao.home', compact('manutencoes'));
     }
 

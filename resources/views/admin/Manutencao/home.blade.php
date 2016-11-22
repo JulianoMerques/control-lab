@@ -42,6 +42,7 @@
                 @endforeach
                 </tbody>
             </table>
+            {{$manutencoes->render()}}
 
         </div>
     </div>

@@ -2,22 +2,22 @@
 
 @section('content')
     <div class="container">
-    @if(Session::has('message'))
-        {{ \App\Core\Helpers\AppHelper::showMessage(Session::get('message')) }}
-    @endif
+        @if(Session::has('message'))
+            {{ \App\Core\Helpers\AppHelper::showMessage(Session::get('message')) }}
+        @endif
 
-    <div class="row col s12 m12 l12">
-        <div class="container center-align">
-            <div class="col col s12 m12 l12">
-                <h4>Lista Dispositivos </h4>
+        <div class="row col s12 m12 l12">
+            <div class="container center-align">
+                <div class="col col s12 m12 l12">
+                    <h4>Lista Dispositivos </h4>
+                </div>
             </div>
-        </div>
 
-        {{--<div class="right">--}}
+            {{--<div class="right">--}}
             {{--<a href="{{ route('maquinas.add') }}" class="waves-effect waves-light btn green">--}}
-                {{--<span><i class="material-icons">library_add</i></span>Adicionar Dispositivo</a>--}}
-        {{--</div>--}}
-    </div>
+            {{--<span><i class="material-icons">library_add</i></span>Adicionar Dispositivo</a>--}}
+            {{--</div>--}}
+        </div>
     </div>
     <div class="row container">
         <div class="col s12 m6 l12">
@@ -43,8 +43,10 @@
                         </td>
                     </tr>
                 @endforeach
+
                 </tbody>
             </table>
+            {{$maquinas->render()}}
         </div>
         <div class="fixed-action-btn">
             <a href="{{route('maquinas.add')}}" class="btn-floating btn-large waves-effect waves-light green tooltipped" data-position="top" data-delay="50" data-tooltip="Cadastrar">

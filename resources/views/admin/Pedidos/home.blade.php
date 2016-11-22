@@ -61,6 +61,7 @@
                 @endforeach
                 </tbody>
             </table>
+            {{$pedidos->render()}}
 
         </div>
         <div class="fixed-action-btn">

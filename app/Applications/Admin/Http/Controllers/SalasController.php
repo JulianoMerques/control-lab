@@ -24,7 +24,7 @@ class SalasController extends BaseController {
 
     public function index()
     {
-    $salas =$this->repository->all();
+    $salas =$this->repository->paginate(5);
         return $this->view('Salas.home', compact('salas'));
     }
     public function store()

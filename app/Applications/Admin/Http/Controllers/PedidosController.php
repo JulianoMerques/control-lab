@@ -54,10 +54,10 @@ class PedidosController extends BaseController {
     public function index()
     {
         if (Auth::user()->tipo_user_id === 1 || Auth::user()->tipo_user_id === 2){
-            $pedidos =$this->repository->all();
+            $pedidos =$this->repository->paginate(5);
             return $this->view('Pedidos.home', compact('pedidos'));
         }else{
-            $pedidos =$this->repository->findWhere(['usuario_id'=> Auth::user()->id]);
+            $pedidos =$this->repository->findWhere(['usuario_id'=> Auth::user()->id])->paginate(5);
             return $this->view('Pedidos.home', compact('pedidos'));
         }
 

@@ -34,7 +34,7 @@ class UsuariosController extends BaseController {
 
     public function index()
     {
-        $usuarios =$this->repository->all();
+        $usuarios =$this->repository->paginate(5);
         return $this->view('Usuarios.home', compact('usuarios'));
     }
     public function store()
