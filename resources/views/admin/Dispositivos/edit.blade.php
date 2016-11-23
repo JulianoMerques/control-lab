@@ -20,7 +20,7 @@
                             <label for="mac">Mac</label>
                         </div>
                         <div class="input-field col s6">
-                            <select name="laboratorio_id">
+                            <select name="laboratorios_id">
                                 <option value="{{$maquina->laboratorios_id}}">{{$maquina->laboratorios['nome']}}</option>
                                 @foreach($laboratorios as $laboratorio)
                                     <option value="{{$laboratorio->id}}">{{$laboratorio->nome}}</option>

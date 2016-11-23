@@ -7,27 +7,19 @@
     <div class="container ">
 
         <div class="col col s12 m12 l12 center-align">
-            <h5>Cadastrar Sala </h5>
+            <h5>Editar Problema </h5>
         </div>
 
 
 
         <div class="row ">
             <div class="col s12 m12 l12">
-                <form name="sala_create" method="post" class="form-horizontal" action="{{route('salas.create')}}" class="col s12" enctype="multipart/form-data">
+                <form name="problema_create" method="post" class="form-horizontal" action="{{route('problemas.update',$problema->id)}}" class="col s12" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="row">
-                        <div class="input-field col s12 m12 l6">
-                            <input name="nome" id="nome" type="text" class="validate">
-                            <label for="nome">Nome</label>
-                        </div>
-                        <div class="input-field col s12 m12 l6">
-                            <input placeholder="Capacidade" name="capacidade" id="capacidade" type="number" class="validate">
-                            <label for="capacidade">Capacidade </label>
-                        </div>
                         <div class="input-field col s12 m12 l12">
-                            <textarea id="descricao"  name="descricao" class="materialize-textarea"></textarea>
-                            <label for="descricao">Descrição</label>
+                            <input name="problema" id="problema" type="text" value="{{$problema->problema}}" class="validate">
+                            <label for="nome">Problema</label>
                         </div>
                     </div>
                     <hr>

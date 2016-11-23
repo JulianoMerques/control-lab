@@ -6,6 +6,7 @@ namespace App\Applications\Admin\Http\Controllers;
 
 use App\Domains\Laboratorios\Repositories\LaboratorioRepository;
 use App\Domains\Maquina\Repositories\MaquinaRepository;
+use App\Domains\Pedido\Entities\Pedido;
 use App\Domains\Pedido\Repositories\PedidoRepository;
 use App\Domains\Pedido\Services\PedidoService;
 use App\Domains\Problema\Repositories\ProblemaRepository;
@@ -35,9 +36,13 @@ class PedidosController extends BaseController {
      * @var TipoManutencaoRepository
      */
     private $tipoRepository;
+    private $usuarioRepository;
+    private $salaRepository;
+    private $maquinaRepository;
+    private $problemaRepository;
 
     public function __construct(UsuarioRepository $usuarioRepository, PedidoRepository $repository, PedidoService $service,
-                               TipoManutencaoRepository $tipoRepository, LaboratorioRepository $salaRepository,
+                                TipoManutencaoRepository $tipoRepository, LaboratorioRepository $salaRepository,
                                 MaquinaRepository $maquinaRepository, ProblemaRepository $problemaRepository)
     {
         $this->middleware('auth');
@@ -53,13 +58,17 @@ class PedidosController extends BaseController {
 
     public function index()
     {
-        if (Auth::user()->tipo_user_id === 1 || Auth::user()->tipo_user_id === 2){
-            $pedidos =$this->repository->paginate(5);
-            return $this->view('Pedidos.home', compact('pedidos'));
-        }else{
-            $pedidos =$this->repository->findWhere(['usuario_id'=> Auth::user()->id])->paginate(5);
+        $usuario = Auth::user();
+        if (!$usuario->isAdm()){
+
+//            $pedidos =$this->repository->skipPresenter()->findWhere(['usuario_id'=> Auth::user()->id])->paginate(5);
+            $pedidos = Pedido::where(['usuario_id'=> Auth::user()->id])->paginate(5);
             return $this->view('Pedidos.home', compact('pedidos'));
         }
+
+        $pedidos =$this->repository->paginate(5);
+        return $this->view('Pedidos.home', compact('pedidos'));
+
 
     }
 

@@ -62,7 +62,7 @@
                 </tbody>
             </table>
             {{$pedidos->render()}}
-
+{{--            {{ $pagination->links('view.name') }}--}}
         </div>
         <div class="fixed-action-btn">
             <a href="{{route('pedidos.add')}}" class="btn-floating btn-large waves-effect waves-light green tooltipped" data-position="top" data-delay="50" data-tooltip="Cadastrar">

@@ -82,8 +82,7 @@
     <script>
         $(document).ready(function(){
 
-            var message = document.getElementById('message').value;
-            Materialize.toast(message, 4000)
+
 
             $('a[rel=delete-maquina]').click( function () {
                 //VARIAVEIS
@@ -117,6 +116,9 @@
             $('button[rel=close]').on('click',function () {
                 $('#confirm-delete').closeModal();
             });
+
+            var message = document.getElementById('message').value;
+            Materialize.toast(message, 4000)
         });
 
     </script>

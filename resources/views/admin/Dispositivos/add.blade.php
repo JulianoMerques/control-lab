@@ -15,7 +15,7 @@
 
         <div class="row ">
             <div class="col s12">
-                <form name="maquinas_create" method="post" class="form-horizontal" action="{{route('maquinas.add')}}" class="col s12" enctype="multipart/form-data">
+                <form name="maquinas_create" method="post" class="form-horizontal" action="{{route('maquinas.create')}}" class="col s12" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="row">
 

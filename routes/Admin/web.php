@@ -106,6 +106,29 @@ Route::group(['prefix' => 'admin'], function(){
 
         Route::get('maquinas', ['as' => 'maquinas.get', 'uses' => 'MaquinasController@teste']);
     });
+
+//    //Tipo Manutenção
+    Route::group(['prefix' => 'tipoManutencao'], function() {
+        Route::get('/', ['as' => 'tipoManutencao', 'uses' => 'tipoManutencaoController@index']);
+        Route::get('add', ['as' => 'tipoManutencao.add', 'uses' => 'tipoManutencaoController@store']);
+        Route::post('add', ['as' => 'tipoManutencao.create', 'uses' => 'tipoManutencaoController@create']);
+        Route::get('{id}/info', ['as' => 'tipoManutencao.show', 'uses' => 'tipoManutencaoController@show']);
+        Route::get('{id}/edit', ['as' => 'tipoManutencao.edit', 'uses' => 'tipoManutencaoController@edit']);
+        Route::post('{id}/edit', ['as' => 'tipoManutencao.update', 'uses' => 'tipoManutencaoController@update']);
+        Route::delete('{id}', ['as' => 'tipoManutencao.delete', 'uses' => 'tipoManutencaoController@destroy']);
+        Route::get('relatorio', ['as' => 'tipoManutencao.get', 'uses' => 'tipoManutencaoController@getProblemas']);
+    });
+    //Tipo Usuario
+    Route::group(['prefix' => 'tipoUser'], function() {
+        Route::get('/', ['as' => 'tipoUser', 'uses' => 'tipoUserController@index']);
+        Route::get('add', ['as' => 'tipoUser.add', 'uses' => 'tipoUserController@store']);
+        Route::post('add', ['as' => 'tipoUser.create', 'uses' => 'tipoUserController@create']);
+        Route::get('{id}/info', ['as' => 'tipoUser.show', 'uses' => 'tipoUserController@show']);
+        Route::get('{id}/edit', ['as' => 'tipoUser.edit', 'uses' => 'tipoUserController@edit']);
+        Route::post('{id}/edit', ['as' => 'tipoUser.update', 'uses' => 'tipoUserController@update']);
+        Route::delete('{id}', ['as' => 'tipoUser.delete', 'uses' => 'tipoUserController@destroy']);
+        Route::get('relatorio', ['as' => 'tipoUser.get', 'uses' => 'tipoUserController@getProblemas']);
+    });
 });
 
 

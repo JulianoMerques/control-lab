@@ -75,6 +75,16 @@
             <li><a href="{{route('relatorios.pedidos')}}">Pedidos</a></li>
             <li><a href="{{route('usuarios.gerar')}}">Usuários</a></li>
         </ul>
+
+        <!-- Dropdown Structure Comuns -->
+        <ul id="dropdownCom" class="dropdown-content">
+            <li><a href="{{route('problemas')}}">Problemas</a></li>
+            <li><a href="{{route('tipoUser')}}">Tipo de Usuario</a></li>
+            <li><a href="{{route('tipoManutencao')}}">Tipo Manutenção</a></li>
+
+        </ul>
+
+
         {{------------------------------fim estrutura de menus------------------------------------------}}
 
         <ul class="right hide-on-med-and-down">
@@ -87,6 +97,7 @@
                 <li><a  href="{{route('manutencao')}}" >Manutenção</a></li>
                 <li><a class="dropdown-button" href="#!" data-activates="dropdownUser">Usuários<i class="material-icons right">arrow_drop_down</i></a></li>
                 <li><a class="dropdown-button" href="#!" data-activates="dropdownRel">Relatórios<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdownCom">Comuns<i class="material-icons right">arrow_drop_down</i></a></li>
             @endif
         </ul>
 

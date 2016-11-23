@@ -59,7 +59,7 @@ class MaquinaService
             if( !$createMaquina ) {
                 $message = 'error|Erro ao cadastrar Dispositivos. Tente novamente.';
             }else{
-                $message = 'success|Dispositivos Cadastrada com Secesso.';
+                $message = 'success|Dispositivo Cadastrado com Secesso.';
             }
             return Redirect::route('maquinas')->withMessage($message);
 
@@ -83,7 +83,7 @@ class MaquinaService
             if( !$updateMaquina ) {
                 $message = 'error|Erro ao Atualizar Dispositivos. Tente novamente.';
             }else{
-                $message = 'success|Dispositivos Atualizada com Secesso.';
+                $message = 'success|Dispositivo Atualizado com Secesso.';
             }
             return Redirect::route('maquinas')->withMessage($message);
 

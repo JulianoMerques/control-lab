@@ -17,7 +17,7 @@ class MaquinaValidator extends LaravelValidator
         ],
         ValidatorInterface::RULE_UPDATE => [
             'mac' => ['required', 'string'],
-            'laboratorio_id' => ['required', 'integer'],
+            'laboratorios_id' => ['required', 'integer'],
             'patrimonio' => ['integer'],
             'nome' => ['string'],
             'configuracao' => ['string',  'max:255']

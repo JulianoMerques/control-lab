@@ -9,11 +9,6 @@
             <div class="container center-align">
                 <h4>Lista de Usuários</h4>
             </div>
-
-            {{--<div class="right">--}}
-                {{--<a href="{{ route('usuarios.add') }}" class="waves-effect waves-light btn green">--}}
-                    {{--<span><i class="material-icons">library_add</i></span>Adicionar Usuário</a>--}}
-            {{--</div>--}}
         </div>
     </div>
 
@@ -82,8 +77,6 @@
     <script>
         $(document).ready(function(){
 
-            var message = document.getElementById('message').value;
-            Materialize.toast(message, 4000)
 
             $('a[rel=delete-usuario]').click( function () {
                 //VARIAVEIS
@@ -115,6 +108,8 @@
             });
 
 
+            var message = document.getElementById('message').value;
+            Materialize.toast(message, 4000)
         });
 
     </script>
