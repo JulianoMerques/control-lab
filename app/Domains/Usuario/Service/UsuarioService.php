@@ -138,7 +138,7 @@ class UsuarioService
                     return Redirect::route('usuarios')->withMessage($message);
                 }
                 $message = 'success|Usuário Atualizado com Secesso.';
-                return Redirect::route('usuarios')->withMessage($message);
+                return Redirect::route('usuarios.show',$id)->withMessage($message);
             }
 
         }catch (ValidatorException $e) {

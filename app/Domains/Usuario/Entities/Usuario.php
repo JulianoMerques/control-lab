@@ -3,6 +3,7 @@ namespace App\Domains\Usuario\Entities;
 
 use App\Domains\Manutencao\Entities\Manutencao;
 use App\Domains\Pedido\Entities\Pedido;
+use App\Domains\Turno\Entities\Turno;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Usuario extends Authenticatable
@@ -33,6 +34,10 @@ class Usuario extends Authenticatable
     }
     public function manutencao(){
         return $this->hasMany(Manutencao::class);
+    }
+
+    public function turno(){
+        return $this->belongsTo(Turno::class);
     }
 
 

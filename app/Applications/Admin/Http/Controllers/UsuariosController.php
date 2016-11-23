@@ -60,6 +60,7 @@ class UsuariosController extends BaseController {
     }
 
     public function update(Request $request, $id){
+//        dd($request->all());
         return $this->service->update($request->except('_token', 'editar','id'),$id);
 
     }

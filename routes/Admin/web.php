@@ -77,6 +77,7 @@ Route::group(['prefix' => 'admin'], function(){
         Route::delete('{id}', ['as' => 'usuarios.delete', 'uses' => 'UsuariosController@destroy']);
         Route::get('relatorio', ['as' => 'usuarios.get', 'uses' => 'UsuariosController@getUsuarios']);
     });
+
     //PROBLEMAS
     Route::group(['prefix' => 'problemas'], function() {
         Route::get('/', ['as' => 'problemas', 'uses' => 'ProblemasController@index']);

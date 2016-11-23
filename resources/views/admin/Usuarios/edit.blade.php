@@ -16,7 +16,7 @@
                     <div class="row">
                         <div class="input-field col s12 m10 l6">
                             <select name="turno_id">
-                                <option value="">Escolha uma opção</option>
+                                <option value="{{$usuario->turno_id}}">{{$usuario->turno['turno']}}</option>
                                 @foreach($turnos as $turno)
                                     <option value="{{$turno->id}}">{{$turno->turno}}</option>
                                 @endforeach
@@ -48,17 +48,17 @@
                             <input placeholder="Senha" name="password" id="password" type="password" class="validate">
                             <label for="nome">Senha</label>
                         </div>
-                        <div class="col s12 m12 l6">
-                            <div class="file-field input-field">
-                                <div class="btn green">
-                                    <span>Foto</span>
-                                    <input name="img" type="file">
-                                </div>
-                                <div class="file-path-wrapper">
-                                    <input class="file-path validate" name="img" value="{{$usuario->img}}" type="text">
-                                </div>
-                            </div>
-                        </div>
+                        {{--<div class="col s12 m12 l6">--}}
+                            {{--<div class="file-field input-field">--}}
+                                {{--<div class="btn green">--}}
+                                    {{--<span>Foto</span>--}}
+                                    {{--<input name="img" type="file">--}}
+                                {{--</div>--}}
+                                {{--<div class="file-path-wrapper">--}}
+                                    {{--<input class="file-path validate" name="img" value="{{$usuario->img}}" type="text">--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
 
                     </div>
                     <hr>
