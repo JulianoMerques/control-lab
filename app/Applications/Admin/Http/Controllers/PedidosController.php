@@ -17,6 +17,7 @@ use App\Domains\Usuario\Repositories\UsuarioRepository;
 use App\Domains\Usuario\Service\UsuarioService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class PedidosController extends BaseController {
 
@@ -96,7 +97,15 @@ class PedidosController extends BaseController {
 
 
         $pedidos = $this->repository->find($protocolo);
-        return $this->view('Pedidos.info', compact('pedidos'));
+//        $pedido = $this->repository->findWhere(['id'=>$protocolo, 'usuario_id'=> Auth::user()->id]);
+//        dd($pedido);
+        if (count($pedidos)>0){
+            return $this->view('Pedidos.info', compact('pedidos'));
+        }
+        $message = 'error|Voce não tem acesso a este pedido.';
+        return Redirect::route('pedidos')->withMessage($message);
+
+
     }
 
     public function edit($id)

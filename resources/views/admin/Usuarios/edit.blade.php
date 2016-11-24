@@ -44,10 +44,10 @@
                             <input name="email" id="email" type="email" value="{{$usuario->email}}" class="validate">
                             <label for="nome">Email</label>
                         </div>
-                        <div class="input-field col s12 m12 l6">
-                            <input placeholder="Senha" name="password" id="password" type="password" class="validate">
-                            <label for="nome">Senha</label>
-                        </div>
+                        {{--<div class="input-field col s12 m12 l6">--}}
+                            {{--<input placeholder="Senha" name="password" id="password" type="password" class="validate">--}}
+                            {{--<label for="nome">Senha</label>--}}
+                        {{--</div>--}}
                         {{--<div class="col s12 m12 l6">--}}
                             {{--<div class="file-field input-field">--}}
                                 {{--<div class="btn green">--}}

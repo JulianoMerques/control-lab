@@ -3,17 +3,15 @@
 
     <div class="container">
 
-        <div class="col s12 m12 l5">
+        <div class="col s12 m12 l12">
 
             <div class="card center-align">
                 <div class=" card ">
                     <img src="{!! asset('app/logo3.png') !!}">
-                    {{--<img src="{{$pedidos->usuario['img']}}" width="80%"><br>--}}
-                    {{--<label>{{$pedidos->usuario['nome']}}</label>--}}
                 </div>
             </div>
         </div>
-        <div class="col s12 m12 l7">
+        <div class="col s12 m12 l12">
             <div class="card">
                 <div class="card-content">
                     <p>Protocolo: {{$pedidos->id}} </p> <br>

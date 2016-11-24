@@ -43,10 +43,12 @@ class UsuariosController extends BaseController {
         $tipos = $this->tipoRepository->all();
         return $this->view('Usuarios.add', compact('turnos','tipos'));
     }
+
     public function create(Request $request)
     {
         return $this->service->store($request->except('_token', 'enviar'));
     }
+
     public function show($id){
         $usuario = $this->repository->find($id);
         return $this->view('Usuarios.info', compact('usuario'));

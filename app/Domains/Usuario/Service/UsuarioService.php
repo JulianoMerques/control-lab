@@ -134,8 +134,8 @@ class UsuarioService
                         return Redirect::route('usuarios')->withMessage($message);
                     }
                 }else{
-                    $message = 'error|Não existe campo img no array.';
-                    return Redirect::route('usuarios')->withMessage($message);
+                    $message = 'error|Nenhuma Imagem Enviada.';
+                    return Redirect::route('usuarios.show',$id)->withMessage($message);
                 }
                 $message = 'success|Usuário Atualizado com Secesso.';
                 return Redirect::route('usuarios.show',$id)->withMessage($message);
