@@ -15,7 +15,8 @@ class CreateMaquinasTable extends Migration
     {
         Schema::create('maquinas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('Laboratorio_id');
+            $table->integer('laboratorio_id')->unsigned();
+            $table->foreign('laboratorio_id')->references('id')->on('laboratorios');
             $table->string('mac');
             $table->integer('patrimonio');
             $table->string('nome');
