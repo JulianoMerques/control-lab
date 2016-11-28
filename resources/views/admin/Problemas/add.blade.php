@@ -4,7 +4,7 @@
     @if(Session::has('message'))
         {{ \App\Core\Helpers\AppHelper::showMessage(Session::get('message')) }}
     @endif
-    <div class="container ">
+    <div class="container " style="height: 305px">
 
         <div class="col col s12 m12 l12 center-align">
             <h5>Cadastrar Problema </h5>

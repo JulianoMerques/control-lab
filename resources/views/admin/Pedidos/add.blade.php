@@ -1,7 +1,7 @@
 @extends('layouts.Default.app')
 
 @section('content')
-    <div class="container" xmlns="http://www.w3.org/1999/html">
+    <div class="container" style="height: 305px" xmlns="http://www.w3.org/1999/html">
         <div class="col s12 m12 l12 center-align">
             <h5>Cadastrar Pedido de Manutenção</h5>
         </div>

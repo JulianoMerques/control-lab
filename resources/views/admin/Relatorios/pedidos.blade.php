@@ -1,7 +1,7 @@
 @extends('layouts.Default.app')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="height: 305px">
         <div class="row ">
             <div class="col s12">
                 <form name="pedidos_rel" method="post" class="form-horizontal" action="{{route('pedidos.gerar')}}" class="col s12" enctype="multipart/form-data">

@@ -1,6 +1,6 @@
 @extends('layouts.Default.app')
 @section('content')
-    <div class="container">
+    <div class="container" style="height: 305px">
         @if(\Illuminate\Support\Facades\Session::has('message'))
             {{ \App\Core\Helpers\AppHelper::showAlert(Session::get('message')) }}
         @endif
@@ -26,7 +26,7 @@
                 <tbody>
                 @foreach($tipos as $tipo)
                     <tr>
-                        <td>{{$tipo->tipo}}</td>
+                        <td>{{$tipo->nome}}</td>
                         <td>
                             {{--<a href="{{ route('problemas.show', $problema->id)}}" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Informação"><i class="material-icons blue-text">info</i></a>--}}
                             <a href="{{ route('tipoUser.edit', $tipo->id)}}" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar"><i class="material-icons green-text">edit</i></a>

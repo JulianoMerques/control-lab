@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" style="height: 305px">
         <div class="col s12 m6 l12">
             <table class="centered striped highlight responsive-table">
                 <thead>

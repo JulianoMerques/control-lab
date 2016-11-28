@@ -19,7 +19,7 @@
             {{--</div>--}}
         </div>
     </div>
-    <div class="row container">
+    <div class="row container" style="height: 305px">
         <div class="col s12 m6 l12">
             <table class="centered highlight responsive-table">
                 <thead>

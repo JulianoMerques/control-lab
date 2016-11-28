@@ -59,7 +59,8 @@
         </div>
 
     </div>
-    <footer class="page-footer #2962ff blue accent-4">
+    {{--<footer class="page-footer #2962ff blue accent-4">--}}
+    <footer class="page-footer #757575 grey darken-1">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">

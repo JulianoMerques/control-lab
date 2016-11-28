@@ -1,7 +1,7 @@
 @extends('layouts.Default.app')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="height: 305px">
         @if(Session::has('message'))
             {{ \App\Core\Helpers\AppHelper::showMessage(Session::get('message')) }}
         @endif

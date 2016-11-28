@@ -1,6 +1,6 @@
 @extends('layouts.Default.app')
 @section('content')
-    <div class="container">
+    <div class="container" style="height: 305px">
         {{--Inicio Card Foto do Usuario--}}
         <div class="col s12 m12 l3">
             {{--<div class="col s12 m7">--}}
