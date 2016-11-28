@@ -21,7 +21,6 @@ class CreateManutencaoTable extends Migration
             $table->foreign('turno_id')->references('id')->on('turno');
             $table->integer('pedido_id')->unsigned();
             $table->foreign('pedido_id')->references('id')->on('pedido');
-
             $table->text('solucao');
 
             $table->timestamps();

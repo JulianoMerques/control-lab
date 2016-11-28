@@ -43,7 +43,7 @@ class Usuario extends Authenticatable
 
     public function isAdm()
     {
-        $nivel_access = Usuario::getAttribute('tipo_user_id');
+        $nivel_access = Usuario::getAttribute('tipo_usuario_id');
 
         if($nivel_access === 1){
             return true;

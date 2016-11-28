@@ -40,7 +40,7 @@
                             <select name="tipo_manutencao_id">
                                 <option value="">Escolha uma opção</option>
                                 @foreach($tipos as $tipo)
-                                    <option value="{{$tipo->id}}">{{$tipo->tipo_manutencao}}</option>
+                                    <option value="{{$tipo->id}}">{{$tipo->nome}}</option>
                                 @endforeach
                             </select>
                             <label>Selecione Um Tipo de Manutenção</label>

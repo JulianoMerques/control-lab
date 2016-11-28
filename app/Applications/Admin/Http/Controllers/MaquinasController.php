@@ -78,7 +78,9 @@ class MaquinasController extends BaseController {
     public function getMaquinas($id)
     {
         $sala = $this->salasRepository->find($id);
+
         $maquinas = $sala->maquinas()->get(['id', 'nome']);
+//        dd($maquinas);
         return Response::json($maquinas);
     }
 
