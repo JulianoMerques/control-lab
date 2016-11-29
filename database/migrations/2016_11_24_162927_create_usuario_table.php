@@ -15,17 +15,17 @@ class CreateUsuarioTable extends Migration
     {
         Schema::create('usuario', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('turno_id')->unsigned();
+            $table->integer('turno_id')->unsigned()->default(1);
             $table->foreign('turno_id')->references('id')->on('turno');
-            $table->integer('tipo_usuario_id')->unsigned();
+            $table->integer('tipo_usuario_id')->unsigned()->default(3);
             $table->foreign('tipo_usuario_id')->references('id')->on('tipo_user');
             $table->string('nome');
-            $table->string('sobrenome');
-            $table->string('telefone');
-            $table->string('funcao');
+            $table->string('sobrenome')->nullable();
+            $table->string('telefone')->nullable();
+            $table->string('funcao')->nullable();
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('img');
+            $table->string('img')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

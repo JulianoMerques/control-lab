@@ -6,7 +6,12 @@
             {{--<div class="col s12 m7">--}}
             <div class="card">
                 <div class="card-image">
-                    <img src="{{$usuario->img}}">
+                    @if($usuario->img == null)
+                        <img src="{!! asset('app/user.png') !!}" >
+                    @else
+                        <img src="{{$usuario->img}}">
+                    @endif
+
                     <div class="card-action">
                         <a rel="foto" data-target="confirm-delete"  class="modal-trigger tooltipped green-text" data-position="bottom" data-delay="50" data-tooltip="Alterar Foto" data-nome="{{$usuario->nome}}" data-id="{{$usuario->id}}">Alterar Foto</a>
                     </div>

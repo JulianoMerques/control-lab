@@ -16,7 +16,7 @@
                     <div class="row">
                         <div class="input-field col s12 m10 l6">
                             <select name="turno_id">
-                                <option value="{{$usuario->turno_id}}">{{$usuario->turno['turno']}}</option>
+                                <option value="{{$usuario->turno_id}}">{{$usuario->turno['nome']}}</option>
                                 @foreach($turnos as $turno)
                                     <option value="{{$turno->id}}">{{$turno->turno}}</option>
                                 @endforeach

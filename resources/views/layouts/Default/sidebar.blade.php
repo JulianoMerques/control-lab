@@ -26,8 +26,15 @@
                 <li>
                     <a class="dropdown-button" href="#!" data-activates="dropdown">
                         <div class="chip #0288d1 light-blue darken-2">
+                            @if(\Illuminate\Support\Facades\Auth::user()->img == null)
+                                {{--<i class="material-icons small">account_circle</i>--}}
+                                <img src="{!! asset('app/user.png') !!}" alt="Imagem do Usuário">
+                                {{\Illuminate\Support\Facades\Auth::user()->nome}}
+                            @else
                             <img src="{{\Illuminate\Support\Facades\Auth::user()->img}}" alt="Imagem do Usuário">
-                            {{\Illuminate\Support\Facades\Auth::user()->nome}}
+                                {{\Illuminate\Support\Facades\Auth::user()->nome}}
+                            @endif
+
                         </div>
                         <i class="material-icons right">arrow_drop_down</i>
                     </a>

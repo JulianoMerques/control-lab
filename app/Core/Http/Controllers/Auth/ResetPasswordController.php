@@ -4,6 +4,7 @@ namespace App\Core\Http\Controllers\Auth;
 
 use App\Core\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Illuminate\Support\Facades\Request;
 
 class ResetPasswordController extends Controller
 {
@@ -21,12 +22,17 @@ class ResetPasswordController extends Controller
     use ResetsPasswords;
 
     /**
-     * Create a new controller instance.
-     *
-     * @return void
+     * ResetPasswordController constructor.
      */
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    public function showResetForm(Request $request, $token = null)
+    {
+        return view('auth.passwords.reset2')->with(
+            ['token' => $token, 'email' => $request->email]
+        );
     }
 }

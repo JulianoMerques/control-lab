@@ -23,3 +23,5 @@ Route::get('/home', 'HomeController@index');
 Route::get('/teste', function(){
     return 'Testando..';
 });
+
+
