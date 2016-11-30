@@ -15,7 +15,7 @@ class Tipo extends Model
      */
 
     protected $fillable = [
-        'tipo'
+        'nome'
     ];
 
 

@@ -25,7 +25,7 @@
                     <p>Pedido Feito Por: {{$pedidos->usuario['nome']}}</p> <br>
                     <p>Sala: {{$pedidos->laboratorios['nome']}}</p><br>
                     <p>Dispositivo: {{$pedidos->maquinas['nome']}}</p><br>
-                    <p>Manutenção: {{$pedidos->tipo_manutencao['tipo_manutencao']}}</p><br>
+                    <p>Manutenção: {{$pedidos->tipo_manutencao['nome']}}</p><br>
                     <p>Problema: {{$pedidos->problema['problema']}}</p><br>
                     <p>Descricao: {{$pedidos->descricao}}</p><br>
                     <p>Situação:

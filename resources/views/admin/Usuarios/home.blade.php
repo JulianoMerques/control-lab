@@ -77,7 +77,8 @@
     <script>
         $(document).ready(function(){
 
-
+            var message = document.getElementById('message').value;
+            Materialize.toast(message, 4000)
             $('a[rel=delete-usuario]').click( function () {
                 //VARIAVEIS
                 var dataNome = $(this).data('nome');
@@ -108,8 +109,7 @@
             });
 
 
-            var message = document.getElementById('message').value;
-            Materialize.toast(message, 4000)
+
         });
 
     </script>

@@ -18,7 +18,7 @@
                             <select name="turno_id">
                                 <option value="">Escolha uma opção</option>
                                 @foreach($turnos as $turno)
-                                    <option value="{{$turno->id}}">{{$turno->turno}}</option>
+                                    <option value="{{$turno->id}}">{{$turno->nome}}</option>
                                 @endforeach
                             </select>
                             <label>Selecione Um Turno</label>
@@ -26,7 +26,7 @@
                             <select name="tipo_user_id">
                                 <option value="">Escolha uma opção</option>
                                 @foreach($tipos as $tipo)
-                                    <option value="{{$tipo->id}}">{{$tipo->tipo}}</option>
+                                    <option value="{{$tipo->id}}">{{$tipo->nome}}</option>
                                 @endforeach
                             </select>
                             <label>Selecione Um Tipo de Usuário</label>
@@ -63,7 +63,7 @@
                         </div>
                         <div class="col s12 m12 l12">
                             <div class="file-field input-field ">
-                                <div class="btn green">
+                                <div class="btn blue-grey col s12 l3">
                                     <span>Foto</span>
                                     <input  name="img" type="file">
                                 </div>
@@ -78,8 +78,8 @@
 
                     <hr>
                     <div class="row">
-                        <div class="col s12">
-                            <button class="btn waves-effect waves-light green pull-right" type="submit" name="Salvar">Salvar
+                        <div class="col s12 l3">
+                            <button class="btn waves-effect waves-light green pull-right btn-large" type="submit" name="Salvar">Salvar
                                 <i class="material-icons right">send</i>
                             </button>
                         </div>
@@ -88,4 +88,12 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+    <script>
+        $(document).ready(function(){
+            var message = document.getElementById('message').value;
+            Materialize.toast(message, 4000)
+        });
+    </script>
 @endsection

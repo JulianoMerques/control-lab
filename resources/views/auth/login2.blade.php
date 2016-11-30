@@ -58,7 +58,7 @@
                 <div class="card-content">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
-
+                        {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
                         <div class="row">
                             <div class="input-field col s12">
                                 <input name="email" id="email" type="email" value="{{ old('email') }}" class="validate">

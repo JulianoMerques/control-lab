@@ -9,11 +9,11 @@ class TipoUserValidator extends LaravelValidator
 {
     public $rules = [
         ValidatorInterface::RULE_CREATE => [
-            'tipo' => ['required', 'string'],
+            'nome' => ['required', 'string'],
 
         ],
         ValidatorInterface::RULE_UPDATE => [
-            'tipo' => ['string'],
+            'nome' => ['string'],
         ]
     ];
 

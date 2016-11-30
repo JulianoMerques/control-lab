@@ -9,6 +9,8 @@ use App\Domains\Turno\Repositories\TurnoRepository;
 use App\Domains\Usuario\Repositories\UsuarioRepository;
 use App\Domains\Usuario\Service\UsuarioService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Response;
 
 class UsuariosController extends BaseController {
@@ -56,9 +58,15 @@ class UsuariosController extends BaseController {
 
     public function edit($id)
     {
-        $turnos = $this->turnoRepository->all();
-        $usuario = $this->repository->find($id);
-        return $this->view('Usuarios.edit', compact('usuario','turnos'));
+        if (Auth::user()->id == $id){
+            $turnos = $this->turnoRepository->all();
+            $usuario = $this->repository->find($id);
+            return $this->view('Usuarios.edit', compact('usuario','turnos'));
+        }else{
+            $message = 'error|Você não pode editar um usuario que não seja o seu.';
+            return Redirect::route('usuarios')->withMessage($message);
+        }
+
     }
 
     public function update(Request $request, $id){

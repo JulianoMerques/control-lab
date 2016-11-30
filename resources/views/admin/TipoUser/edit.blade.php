@@ -18,8 +18,8 @@
                     {{ csrf_field() }}
                     <div class="row">
                         <div class="input-field col s12 m12 l12">
-                            <input name="tipo" id="tipo" type="text" value="{{$tipo->tipo}}" class="validate">
-                            <label for="tipo">Problema</label>
+                            <input name="nome" id="tipo" type="text" value="{{$tipo->nome}}" class="validate">
+                            <label for="tipo">Tipo Usuário</label>
                         </div>
                     </div>
                     <hr>

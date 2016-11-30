@@ -7,19 +7,19 @@
         {{--<input type="hidden" id="message" class="toast #a5d6a7 green lighten-3" value="Teste" name="message">'--}}
         <div class="col s12 m12 l12">
             <div class="container center-align">
-                <h4>Problemas Cadastrados</h4>
+                <h4>Tipos de Usuários Cadastrados</h4>
             </div>
         </div>
         <br>
 
 
 
-        <div class="col s12 m6 l12">
+        <div class=" col s12 m6 l12">
             <table class="centered highlight responsive-table">
                 <thead>
                 <tr>
                     <th data-field="tipoUser">Tipo de Usuários</th>
-                    <th data-field="acoes" width="10%">Ações</th>
+                    <th data-field="acoes" width="20%">Ações</th>
                 </tr>
                 </thead>
 
@@ -30,7 +30,7 @@
                         <td>
                             {{--<a href="{{ route('problemas.show', $problema->id)}}" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Informação"><i class="material-icons blue-text">info</i></a>--}}
                             <a href="{{ route('tipoUser.edit', $tipo->id)}}" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar"><i class="material-icons green-text">edit</i></a>
-                            <a id="delete" rel="delete-problema" data-target="confirm-delete"  class="modal-trigger  tooltipped" data-position="bottom" data-delay="50" data-tooltip="Deletar" data-nome="{{$tipo->tipo}}" data-id="{{$tipo->id}}"><i class="material-icons red-text">delete</i></a>
+                            <a id="delete" rel="delete-problema" data-target="confirm-delete"  class="modal-trigger  tooltipped" data-position="bottom" data-delay="50" data-tooltip="Deletar" data-nome="{{$tipo->nome}}" data-id="{{$tipo->id}}"><i class="material-icons red-text">delete</i></a>
                         </td>
                     </tr>
                 @endforeach

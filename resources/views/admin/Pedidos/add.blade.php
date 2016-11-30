@@ -67,24 +67,29 @@
 @endsection
 @section('script')
     <script>
-//        $(document).ready(function(){
+        $(document).ready(function(){
             $('select[name=maquinas_id]').html('').append('<option value="">  Selecione uma Sala...  </option>');
-
+            $('select').material_select();
             $('select[name=laboratorios_id]').change(function () {
                 var laboratorios_id = $(this).val();
 
                 $.get('/admin/pedidos/' + laboratorios_id, function (maquinas) {
                     $('select[name=maquinas_id]').html('').empty();
-
-                    $('select[name=maquinas_id]').html('').append('<option value="">Escolha o Dispositivo </option>');
-                    $.each(maquinas, function (key, value) {
-                        $('select[name=maquinas_id]').append('<option value=' + value.id + '>' + value.nome + '</option>');
+                    if(maquinas == ""){
+                        $('select[name=maquinas_id]').html('').append('<option value=""> Sala Não Possui Dispositivos </option>');
                         $('select').material_select();
-                    });
+                    }else{
+                        $('select[name=maquinas_id]').html('').append('<option value="">Escolha o Dispositivo </option>');
+                        $.each(maquinas, function (key, value) {
+                            $('select[name=maquinas_id]').append('<option value=' + value.id + '>' + value.nome + '</option>');
+                            $('select').material_select();
+                        });
+                    }
+
                 });
 
             });
-//        });
+        });
 
     </script>
 @endsection
