@@ -73,7 +73,7 @@
                         {{ csrf_field() }}
 
 
-                        <div class="col s12 m12 l6">
+                        <div class="col s12 m12 l3">
                             <div class="file-field input-field">
                                 <div class="btn green">
                                     <span>Foto</span>

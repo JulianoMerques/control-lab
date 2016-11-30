@@ -78,8 +78,8 @@
 
                     <hr>
                     <div class="row">
-                        <div class="col s12 l3">
-                            <button class="btn waves-effect waves-light green pull-right btn-large" type="submit" name="Salvar">Salvar
+                        <div class="col s12 l12">
+                            <button class="btn waves-effect waves-light green pull-right " type="submit" name="Salvar">Salvar
                                 <i class="material-icons right">send</i>
                             </button>
                         </div>

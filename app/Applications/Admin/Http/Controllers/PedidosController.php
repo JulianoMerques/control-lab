@@ -60,11 +60,13 @@ class PedidosController extends BaseController {
     public function index()
     {
         $usuario = Auth::user();
-        if (!$usuario->isAdm()){
-
+        if (!$usuario->isAdm() ){
+            if (!$usuario->isEstag()){
 //            $pedidos =$this->repository->skipPresenter()->findWhere(['usuario_id'=> Auth::user()->id])->paginate(5);
-            $pedidos = Pedido::where(['usuario_id'=> Auth::user()->id])->paginate(5);
-            return $this->view('Pedidos.home', compact('pedidos'));
+                $pedidos = Pedido::where(['usuario_id'=> Auth::user()->id])->paginate(5);
+                return $this->view('Pedidos.home', compact('pedidos'));
+            }
+
         }
 
         $pedidos =$this->repository->paginate(5);

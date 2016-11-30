@@ -25,9 +25,8 @@
 
                         <div class="input-field col s12 m10 l3 "></div>
                     </div>
-                    <div class="row">
+                    <div class="row ">
                         <div class="col s12 center-align">
-
                             <button class="btn waves-effect waves-light green pull-right" type="submit" name="enviar">Gerar
                                 <i class="material-icons">insert_drive_file</i>
                             </button>

@@ -31,7 +31,7 @@
                                 <img src="{!! asset('app/user.png') !!}" alt="Imagem do Usuário">
                                 {{\Illuminate\Support\Facades\Auth::user()->nome}}
                             @else
-                            <img src="{{\Illuminate\Support\Facades\Auth::user()->img}}" alt="Imagem do Usuário">
+                                <img src="{{\Illuminate\Support\Facades\Auth::user()->img}}" alt="Imagem do Usuário">
                                 {{\Illuminate\Support\Facades\Auth::user()->nome}}
                             @endif
 
@@ -95,15 +95,17 @@
         {{------------------------------fim estrutura de menus------------------------------------------}}
 
         <ul class="right hide-on-med-and-down">
-            @if(\Illuminate\Support\Facades\Auth::user()->isAdm())
+            @if(\Illuminate\Support\Facades\Auth::user()->isAdm() || \Illuminate\Support\Facades\Auth::user()->isEstag() )
                 <li><a class="dropdown-button" href="#!" data-activates="dropdownLab">Salas<i class="material-icons right">arrow_drop_down</i></a></li>
                 <li><a class="dropdown-button" href="#!" data-activates="dropdownMaq">Dispositivos<i class="material-icons right">arrow_drop_down</i></a></li>
             @endif
             <li><a class="dropdown-button" href="#!" data-activates="dropdownPed">Pedidos<i class="material-icons right">arrow_drop_down</i></a></li>
-            @if(\Illuminate\Support\Facades\Auth::user()->isAdm())
+            @if(\Illuminate\Support\Facades\Auth::user()->isAdm() || \Illuminate\Support\Facades\Auth::user()->isEstag())
                 <li><a  href="{{route('manutencao')}}" >Manutenção</a></li>
-                <li><a class="dropdown-button" href="#!" data-activates="dropdownUser">Usuários<i class="material-icons right">arrow_drop_down</i></a></li>
                 <li><a class="dropdown-button" href="#!" data-activates="dropdownRel">Relatórios<i class="material-icons right">arrow_drop_down</i></a></li>
+            @endif
+            @if(\Illuminate\Support\Facades\Auth::user()->isAdm() )
+                <li><a class="dropdown-button" href="#!" data-activates="dropdownUser">Usuários<i class="material-icons right">arrow_drop_down</i></a></li>
                 <li><a class="dropdown-button" href="#!" data-activates="dropdownCom">Comuns<i class="material-icons right">arrow_drop_down</i></a></li>
             @endif
         </ul>

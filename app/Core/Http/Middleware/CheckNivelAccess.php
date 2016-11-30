@@ -19,16 +19,21 @@ class CheckNivelAccess
         //Se usuário não for administrador e tentar acessar uma rota sem permissão
         if(!$usuario->isAdm()){
 
-            if(in_array($request->route()->getName(), $allowed_routes) AND $parameters['id'] === Auth::user()->id){
-                return $next($request);
+            if (!$usuario->isEstag()){
+                if(in_array($request->route()->getName(), $allowed_routes) AND $parameters['id'] === Auth::user()->id){
+                    return $next($request);
+                }
+                if($request->route()->getPrefix() === 'admin/maquinas' || $request->route()->getPrefix() === 'admin/usuarios'
+                    ||$request->route()->getPrefix() === 'admin/manutencao' ||$request->route()->getPrefix() === 'admin/relatorios'
+                    ||$request->route()->getPrefix() === 'admin/salas' ||$request->route()->getPrefix() === 'admin/problemas'){
+                    return redirect()->route('dashboard')->withMessage('error|Você não tem permissão para acessar
+                    essa página!');
+                }
             }
 
-            if($request->route()->getPrefix() === 'admin/maquinas' || $request->route()->getPrefix() === 'admin/usuarios'
-                ||$request->route()->getPrefix() === 'admin/manutencao' ||$request->route()->getPrefix() === 'admin/relatorios'
-                ||$request->route()->getPrefix() === 'admin/salas' ||$request->route()->getPrefix() === 'admin/problemas'){
-                return redirect()->route('dashboard')->withMessage('error|Você não tem permissão para acessar 
-                    essa página!');
-            }
+
+
+
         }
 
         return $next($request);
