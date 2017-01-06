@@ -18,7 +18,7 @@
                             <select name="turno_id">
                                 <option value="">Escolha uma opção</option>
                                 @foreach($turnos as $turno)
-                                    <option value="{{$turno->id}}">{{$turno->turno}}</option>
+                                    <option value="{{$turno->id}}">{{$turno->nome}}</option>
                                 @endforeach
                             </select>
                             <label>Selecione o Turno</label>

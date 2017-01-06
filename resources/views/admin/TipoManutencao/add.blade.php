@@ -18,7 +18,7 @@
                     {{ csrf_field() }}
                     <div class="row">
                         <div class="input-field col s12 m12 l12">
-                            <input name="tipo_manutencao" id="tipo_manutencao" type="text" class="validate">
+                            <input name="nome" id="tipo_manutencao" type="text" class="validate">
                             <label for="tipo_manutencao">Tipo de Manutenção</label>
                         </div>
                     </div>

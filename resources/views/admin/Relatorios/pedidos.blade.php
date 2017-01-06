@@ -94,7 +94,7 @@
                     $.get('/admin/manutencao/relatorio', function (maq) {
                         $('select[name=select]').html('').append('<option value="">Escolha uma opção</option>');
                         $.each(maq, function (key, value) {
-                            $('select[name=select]').append('<option value=' + value.id + '>' + value.tipo_manutencao + '</option>');
+                            $('select[name=select]').append('<option value=' + value.id + '>' + value.nome + '</option>');
                             $('select').material_select();
                         });
                     });

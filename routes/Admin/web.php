@@ -87,6 +87,7 @@ Route::group(['prefix' => 'admin','middleware' => ['web']], function(){
         Route::get('{id}/edit', ['as' => 'problemas.edit', 'uses' => 'ProblemasController@edit']);
         Route::post('{id}/edit', ['as' => 'problemas.update', 'uses' => 'ProblemasController@update']);
         Route::delete('{id}', ['as' => 'problemas.delete', 'uses' => 'ProblemasController@destroy']);
+        Route::get('relatorio', ['as' => 'problemas.get', 'uses' => 'ProblemasController@getProblemas']);
     });
 
     //RELATÓRIOS

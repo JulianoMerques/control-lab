@@ -53,7 +53,7 @@ date_default_timezone_set('America/Sao_Paulo')
                 <td>{{$manutencao->pedido_id}}</td>
                 <td>{{$manutencao->usuario['nome']}}</td>
                 <td>{{$manutencao->solucao}}</td>
-                <td>{{$manutencao->turno['turno']}}</td>
+                <td>{{$manutencao->turno['nome']}}</td>
                 <td>{{$manutencao->created_at}}</td>
             </tr>
         @endforeach

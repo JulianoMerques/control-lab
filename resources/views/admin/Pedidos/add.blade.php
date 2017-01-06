@@ -50,6 +50,7 @@
                             <label for="descricao">Descrição do Problema</label>
                         </div>
                         <input type="hidden" value="{{date("dmY"). mt_rand(1,100)}}" name="id"/>
+                        <input type="hidden" value="0" name="situacao"/>
 
                     </div>
                     <div class="row">

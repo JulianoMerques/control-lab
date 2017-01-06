@@ -9,11 +9,11 @@ class TipoManutencaoValidator extends LaravelValidator
 {
     public $rules = [
         ValidatorInterface::RULE_CREATE => [
-            'tipo_manutencao' => ['required', 'string'],
+            'nome' => ['required', 'string'],
 
         ],
         ValidatorInterface::RULE_UPDATE => [
-            'tipo_manutencao' => ['string'],
+            'nome' => ['string'],
         ]
     ];
 

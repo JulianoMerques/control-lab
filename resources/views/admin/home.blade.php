@@ -13,7 +13,7 @@
                         {{--<h3>logo</h3>--}}
                         {{--<img src="../layouts/Default/logo2.png" alt="Control-Lab V 1.1">--}}
 
-                        <img src="{!! asset('app/logo3.png') !!}" alt="Control-Lab V 1.1">
+                        {{--<img src="{!! asset('app/logo3.png') !!}" alt="Control-Lab V 1.1">--}}
                     </div>
                 </div>
             </div>

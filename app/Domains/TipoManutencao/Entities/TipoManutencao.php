@@ -16,7 +16,7 @@ class TipoManutencao extends Model
      */
 
     protected $fillable = [
-        'tipo_manutencao'
+        'nome'
     ];
 
     public function pedido(){

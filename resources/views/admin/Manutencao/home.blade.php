@@ -32,7 +32,7 @@
                         <td>{{$manutencao->id}}</td>
                         <td>{{$manutencao->usuario['nome']}}</td>
                         <td>{{$manutencao->solucao}}</td>
-                        <td>{{$manutencao->turno['turno']}}</td>
+                        <td>{{$manutencao->turno['nome']}}</td>
                         <td>
                             <a href="{{ route('manutencao.show', $manutencao->id)}}" class="tooltipped " data-position="bottom" data-delay="50" data-tooltip="Mostrar Manutencao">
                                 <i class="material-icons  lighten-1">info</i>
