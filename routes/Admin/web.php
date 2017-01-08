@@ -11,11 +11,6 @@
 |
 */
 Route::group(['prefix' => 'admin','middleware' => ['web']], function(){
-
-//    Route::get('/', function () {
-//        return view('welcome');
-//    });
-
     Route::get('/home',['as' => 'dashboard', 'uses' => 'AdminController@index']);
 
     //Dispositivos
@@ -23,7 +18,6 @@ Route::group(['prefix' => 'admin','middleware' => ['web']], function(){
         Route::get('/', ['as' => 'maquinas', 'uses' => 'MaquinasController@index']);
         Route::get('add', ['as' => 'maquinas.add', 'uses' => 'MaquinasController@store']);
         Route::post('add', ['as' => 'maquinas.create', 'uses' => 'MaquinasController@create']);
-//        Route::get('{id}', ['as' => 'maquinas.laboratorios', 'uses' => 'MaquinasController@getMaquinas']);
         Route::get('{id}/info', ['as' => 'maquinas.show', 'uses' => 'MaquinasController@show']);
         Route::get('{id}/edit', ['as' => 'maquinas.edit', 'uses' => 'MaquinasController@edit']);
         Route::post('{id}/edit', ['as' => 'maquinas.update', 'uses' => 'MaquinasController@update']);
@@ -99,7 +93,6 @@ Route::group(['prefix' => 'admin','middleware' => ['web']], function(){
 
         Route::get('usuarios/gerar', ['as' => 'usuarios.gerar', 'uses' => 'RelatoriosController@relUsuarios']);
 
-//        Route::get('manutencoes', ['as' => 'relatorios.manutencoes', 'uses' => 'RelatoriosController@indexManutencoes']);
         Route::get('manutencoes/gerar', ['as' => 'manutencoes.gerar', 'uses' => 'RelatoriosController@relManutencao']);
 
         Route::get('pedidos', ['as' => 'relatorios.pedidos', 'uses' => 'RelatoriosController@indexPedidos']);
@@ -119,6 +112,7 @@ Route::group(['prefix' => 'admin','middleware' => ['web']], function(){
         Route::delete('{id}', ['as' => 'tipoManutencao.delete', 'uses' => 'tipoManutencaoController@destroy']);
         Route::get('relatorio', ['as' => 'tipoManutencao.get', 'uses' => 'tipoManutencaoController@getProblemas']);
     });
+
     //Tipo Usuario
     Route::group(['prefix' => 'tipoUser'], function() {
         Route::get('/', ['as' => 'tipoUser', 'uses' => 'tipoUserController@index']);
@@ -133,14 +127,14 @@ Route::group(['prefix' => 'admin','middleware' => ['web']], function(){
 });
 
 
-Route::group(['prefix' => 'user'], function(){
-    Route::get('/', function () {
-        return view('welcome');
-    });
-
-    Route::get('/home', 'AdminController@index');
-
-    Route::get('/teste', function(){
-        return 'Testando..';
-    });
-});
+//Route::group(['prefix' => 'user'], function(){
+//    Route::get('/', function () {
+//        return view('welcome');
+//    });
+//
+//    Route::get('/home', 'AdminController@index');
+//
+//    Route::get('/teste', function(){
+//        return 'Testando..';
+//    });
+//});
